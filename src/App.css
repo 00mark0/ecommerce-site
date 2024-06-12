@@ -14,7 +14,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 90%;
+  width: 30%;
   height: 100vh;
   background: #fff;
   transform: translateX(-100%);
@@ -35,4 +35,10 @@
   background: none;
   border: none;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    width: 91%;
+  }
 }
