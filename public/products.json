@@ -310,7 +310,7 @@
     "name": "Apple iMac Pro",
     "description": "27-inch, 10-core Xeon W, 32GB RAM, 1TB SSD Storage",
     "price": 4999.0,
-    "image": "/images/apple_imac_pro.jpg",
+    "image": "/assets/apple_imac_pro.jpg",
     "category": "pc",
     "brand": "Apple"
   },
@@ -490,7 +490,7 @@
     "name": "TCL 5-Series S535",
     "description": "50\" QLED 4K UHD Smart Roku TV",
     "price": 598.0,
-    "image": "/images/tcl_5-series_s535.jpg",
+    "image": "/assets/tcl_5_series_s535.jpeg",
     "category": "tv",
     "brand": "TCL"
   },
@@ -670,7 +670,7 @@
     "name": "Asus Zenfone 8",
     "description": "128GB, Obsidian Black",
     "price": 599.99,
-    "image": "/images/asus_zenfone_8.jpg",
+    "image": "/assets/asus_zenfone_8.jpg",
     "category": "mobile",
     "brand": "Asus"
   },
@@ -850,7 +850,7 @@
     "name": "DJI Mavic Air 2",
     "description": "Drone Fly More Combo",
     "price": 988.0,
-    "image": "/images/dji_mavic_air_2.jpg",
+    "image": "/assets/dji_mavic_air_2.png",
     "category": "tech_gear",
     "brand": "DJI"
   },

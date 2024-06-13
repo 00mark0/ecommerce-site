@@ -69,7 +69,7 @@ function Navbar({ theme, setTheme }) {
             </button>
             <button onClick={() => setTheme(!theme)} className="cursor-pointer">
               <img
-                src={theme ? light : dark}
+                src={theme ? dark : light}
                 alt="theme"
                 className="w-16 h-8"
               />
@@ -97,7 +97,7 @@ function Navbar({ theme, setTheme }) {
                 className="cursor-pointer"
               >
                 <img
-                  src={theme ? light : dark}
+                  src={theme ? dark : light}
                   alt="theme"
                   className="w-16 h-8"
                 />
@@ -116,15 +116,19 @@ function Navbar({ theme, setTheme }) {
           </div>
         </nav>
       </div>
-      <div className={`menu ${openBars ? "open" : ""}`} ref={menuRef}>
+      <div
+        id="sideBar"
+        className={`menu ${openBars ? "open" : ""}`}
+        ref={menuRef}
+      >
         <button
-          className="cursor-pointer menu-button"
+          className="cursor-pointer menu-button text-black"
           onClick={toggleBars}
           ref={buttonRef}
         >
           <FontAwesomeIcon icon={faTimes} size="xl" />
         </button>
-        <ul>
+        <ul className="text-black">
           <li>Page 1</li>
           <li>Page 2</li>
           <li>Page 3</li>

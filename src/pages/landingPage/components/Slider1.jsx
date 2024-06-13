@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "../styles/Sliders.css";
 import productsData from "../../../../public/products.json";
 
-function Sliders() {
+function Slider1() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -39,11 +39,11 @@ function Sliders() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
-    arrows: true,
+    arrows: false,
   };
 
   return (
-    <section id="slideShow">
+    <div id="slideShow" className="cursor-pointer shadow-2xl pb-20 lg:py-0">
       <Slider {...settings}>
         {products.map((product) => (
           <div
@@ -53,16 +53,16 @@ function Sliders() {
             <img
               src={product.image}
               alt={product.name}
-              className="slider-image"
+              className="slider-image rounded-md"
             />
-            <h2>{product.name}</h2>
+            <h2 className="text-xl font-bold mt-4 mb-4">{product.name}</h2>
             <p>{product.description}</p>
-            <p className="slider-price">Sale: ${product.price}</p>
+            <p className="slider-price mt-4">Sale: ${product.price}</p>
           </div>
         ))}
       </Slider>
-    </section>
+    </div>
   );
 }
 
-export default Sliders;
+export default Slider1;

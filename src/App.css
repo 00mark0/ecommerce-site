@@ -6,6 +6,16 @@
   box-sizing: border-box;
 }
 
+body.light {
+  background: #f4f4f4;
+  color: #333;
+}
+
+body.dark {
+  background: #172554;
+  color: #fff;
+}
+
 #logoText {
   font-family: "Audiowide", cursive;
 }
@@ -14,7 +24,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 30%;
+  width: 20%;
   height: 100vh;
   background: #fff;
   transform: translateX(-100%);

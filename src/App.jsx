@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
@@ -16,7 +16,17 @@ import CartPage from "./pages/CartPage";
 import "./App.css";
 
 function App() {
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState(
+    JSON.parse(localStorage.getItem("theme")) || false
+  );
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  useEffect(() => {
+    document.body.classList.toggle("dark", theme);
+  }, [theme]);
 
   return (
     <Router>
