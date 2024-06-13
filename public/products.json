@@ -427,7 +427,7 @@
     "name": "Philips 58PUS7805/12",
     "description": "58\" 4K Ultra HD Smart TV",
     "price": 549.99,
-    "image": "/images/philips_58pus7805_12.jpg",
+    "image": "/assets/philips_58pus7805_12.webp",
     "category": "tv",
     "brand": "Philips"
   },
@@ -553,25 +553,25 @@
     "name": "Samsung Galaxy S21",
     "description": "128GB, Phantom Gray",
     "price": 799.99,
-    "image": "/images/samsung_galaxy_s21.jpg",
+    "image": "/assets/samsung_galaxy_s21.png",
     "category": "mobile",
     "brand": "Samsung"
   },
   {
     "id": 63,
     "name": "Google Pixel 6",
-    "description": "128GB, Stormy Black",
+    "description": "128GB, Seafoam",
     "price": 599.0,
-    "image": "/images/google_pixel_6.jpg",
+    "image": "/assets/google_pixel_6.jpg",
     "category": "mobile",
     "brand": "Google"
   },
   {
     "id": 64,
     "name": "OnePlus 9",
-    "description": "128GB, Arctic Sky",
+    "description": "128GB, Winter Mist",
     "price": 729.99,
-    "image": "/images/oneplus_9.jpg",
+    "image": "/assets/oneplus_9.png",
     "category": "mobile",
     "brand": "OnePlus"
   },
@@ -589,7 +589,7 @@
     "name": "Apple iPhone SE",
     "description": "64GB, Black",
     "price": 399.0,
-    "image": "/images/apple_iphone_se.jpg",
+    "image": "/assets/apple_iphone_se.jpg",
     "category": "mobile",
     "brand": "Apple"
   },
@@ -598,7 +598,7 @@
     "name": "Samsung Galaxy A52",
     "description": "128GB, Awesome Black",
     "price": 349.99,
-    "image": "/images/samsung_galaxy_a52.jpg",
+    "image": "/assets/samsung_galaxy_a52.jpg",
     "category": "mobile",
     "brand": "Samsung"
   },
@@ -787,7 +787,7 @@
     "name": "Elgato Stream Deck",
     "description": "Live Content Creation Controller",
     "price": 149.99,
-    "image": "/images/elgato_stream_deck.jpg",
+    "image": "/assets/elgato_stream_deck.jpg",
     "category": "tech_gear",
     "brand": "Elgato"
   },

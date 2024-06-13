@@ -2,6 +2,8 @@ import Slider1 from "./components/Slider1";
 import Slider2 from "./components/Slider2";
 import InfoCard from "./components/infoCard";
 import Categories from "./components/Categories";
+import Recommended from "./components/Recommended";
+import Phones from "./components/Phones";
 import "./LandingPage.css";
 
 function LandingPage() {
@@ -17,6 +19,8 @@ function LandingPage() {
         </section>
         <InfoCard />
         <Categories />
+        <Recommended />
+        <Phones />
       </div>
     </>
   );
