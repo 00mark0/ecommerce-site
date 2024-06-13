@@ -39,7 +39,7 @@ function Navbar({ theme, setTheme }) {
 
   return (
     <>
-      <div className="p-8 bg-blue-950 text-white">
+      <div className="p-8 bg-blue-950 text-white fixed top-0 left-0 w-full z-50">
         {/* Layout for larger screens */}
         <nav className="hidden lg:flex justify-around items-center">
           <div className="flex items-center gap-4">
