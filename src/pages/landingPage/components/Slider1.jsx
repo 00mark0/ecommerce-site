@@ -56,7 +56,7 @@ function Slider1() {
               className="slider-image rounded-md"
             />
             <h2 className="text-xl font-bold mt-4 mb-4">{product.name}</h2>
-            <p>{product.description}</p>
+            <p className="text-gray-500">{product.description}</p>
             <p className="slider-price mt-4">Sale: ${product.price}</p>
           </div>
         ))}

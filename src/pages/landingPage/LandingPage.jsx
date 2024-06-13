@@ -4,6 +4,8 @@ import InfoCard from "./components/infoCard";
 import Categories from "./components/Categories";
 import Recommended from "./components/Recommended";
 import Phones from "./components/Phones";
+import Newsletter from "./components/Newsletter";
+import Footer from "./components/Footer";
 import "./LandingPage.css";
 
 function LandingPage() {
@@ -21,6 +23,8 @@ function LandingPage() {
         <Categories />
         <Recommended />
         <Phones />
+        <Newsletter />
+        <Footer />
       </div>
     </>
   );

@@ -135,7 +135,7 @@ function Slider2() {
               className="rounded-md h-48 lg:h-72 w-64 lg:w-96 bg-cover"
             />
             <h2 className="text-xl font-bold mt-4 mb-4">{product.name}</h2>
-            <p>{product.description}</p>
+            <p className="text-gray-500">{product.description}</p>
             <p className="slider-price mt-4">Sale: ${product.price}</p>
           </div>
         ))}
