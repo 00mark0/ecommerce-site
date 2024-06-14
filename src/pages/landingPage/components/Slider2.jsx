@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import PropTypes from "prop-types";
 import "../styles/Sliders.css";
 import productsData from "../../../../public/products.json";
+import { Link } from "react-router-dom";
 
 // Custom arrow components for the slider
 function SampleNextArrow(props) {
@@ -122,22 +123,25 @@ function Slider2() {
     <div id="slideShow2" className="w-64 mx-auto cursor-pointer shadow-2xl">
       <Slider {...settings}>
         {products.map((product) => (
-          <div
+          <Link
+            to={`/product/${product.id}`}
             key={product.id}
-            className="slider-item flex flex-col justify-center items-center mt-10"
+            className="no-underline"
           >
-            <p className="text-red-500 text-lg font-semibold mb-4">
-              Time left: {formatTime(timeLeft)}
-            </p>
-            <img
-              src={product.image}
-              alt={product.name}
-              className="rounded-md h-48 lg:h-72 w-64 lg:w-96 bg-cover"
-            />
-            <h2 className="text-xl font-bold mt-4 mb-4">{product.name}</h2>
-            <p className="text-gray-500">{product.description}</p>
-            <p className="slider-price mt-4">Sale: ${product.price}</p>
-          </div>
+            <div className="slider-item flex flex-col justify-center items-center mt-10">
+              <p className="text-red-500 text-lg font-semibold mb-4">
+                Time left: {formatTime(timeLeft)}
+              </p>
+              <img
+                src={product.image}
+                alt={product.name}
+                className="rounded-md h-48 lg:h-72 w-64 lg:w-96 bg-cover"
+              />
+              <h2 className="text-xl font-bold mt-4 mb-4">{product.name}</h2>
+              <p className="text-gray-500">{product.description}</p>
+              <p className="slider-price mt-4">Sale: ${product.price}</p>
+            </div>
+          </Link>
         ))}
       </Slider>
     </div>

@@ -5,37 +5,37 @@ import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../landingPage/components/Footer";
 import { Link } from "react-router-dom";
 
-function LaptopsPage() {
-  const [laptops, setLaptops] = useState([]);
+function MobileDevices() {
+  const [phones, setPhones] = useState([]);
   const [sortMethod, setSortMethod] = useState("");
   const [selectedBrand, setSelectedBrand] = useState("");
 
   useEffect(() => {
-    let filteredLaptops = productData.filter(
-      (product) => product.category === "laptops"
+    let filteredPhones = productData.filter(
+      (product) => product.category === "mobile"
     );
 
     if (selectedBrand) {
-      filteredLaptops = filteredLaptops.filter(
-        (laptop) => laptop.brand.toLowerCase() === selectedBrand
+      filteredPhones = filteredPhones.filter(
+        (phone) => phone.brand.toLowerCase() === selectedBrand
       );
     }
 
     switch (sortMethod) {
       case "highest":
-        filteredLaptops.sort((a, b) => b.price - a.price);
+        filteredPhones.sort((a, b) => b.price - a.price);
         break;
       case "lowest":
-        filteredLaptops.sort((a, b) => a.price - b.price);
+        filteredPhones.sort((a, b) => a.price - b.price);
         break;
       case "name":
-        filteredLaptops.sort((a, b) => a.name.localeCompare(b.name));
+        filteredPhones.sort((a, b) => a.name.localeCompare(b.name));
         break;
       default:
         break;
     }
 
-    setLaptops(filteredLaptops);
+    setPhones(filteredPhones);
   }, [sortMethod, selectedBrand]);
 
   const handleSortChange = (e) => {
@@ -50,7 +50,7 @@ function LaptopsPage() {
     <>
       <section className="mt-48 lg:mt-32 w-full min-h-screen">
         <div className="flex justify-between items-center p-10">
-          <h1 className="text-2xl font-bold">Laptops</h1>
+          <h1 className="text-2xl font-bold">Mobile Devices</h1>
           <div>
             <select
               name="sort"
@@ -74,40 +74,48 @@ function LaptopsPage() {
             >
               <option value="">Brand</option>
               <option value="apple">Apple</option>
-              <option value="acer">Acer</option>
-              <option value="dell">Dell</option>
-              <option value="hp">HP</option>
-              <option value="lenovo">Lenovo</option>
-              <option value="gigabyte">Gigabyte</option>
-              <option value="tesla">Tesla</option>
+              <option value="samsung">Samsung</option>
+              <option value="oneplus">OnePlus</option>
+              <option value="google">Google</option>
+              <option value="xiaomi">Xiaomi</option>
+              <option value="motorola">Motorola</option>
+              <option value="nokia">Nokia</option>
+              <option value="lg">LG</option>
+              <option value="sony">Sony</option>
+              <option value="huawei">Huawei</option>
+              <option value="asus">Asus</option>
+              <option value="oppo">Oppo</option>
+              <option value="vivo">Vivo</option>
+              <option value="realme">Realme</option>
+              <option value="zte">ZTE</option>
             </select>
           </div>
           <div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 p-4"
-            id="laptopsGrid"
+            id="phonesGrid"
           >
-            {laptops.map((laptop) => (
+            {phones.map((phone) => (
               <Link
-                to={`/product/${laptop.id}`}
-                key={laptop.id}
+                to={`/product/${phone.id}`}
+                key={phone.id}
                 style={{ textDecoration: "none" }}
               >
                 <div className="max-w-xs rounded overflow-hidden shadow-2xl m-2 flex flex-col items-center min-h-full">
                   <img
                     className="w-full rounded-md bg-cover"
-                    src={laptop.image}
-                    alt={laptop.name}
+                    src={phone.image}
+                    alt={phone.name}
                     style={{ height: "300px" }}
                   />
                   <div className="px-6 py-4">
-                    <div className="font-bold text-xl mb-2">{laptop.name}</div>
+                    <div className="font-bold text-xl mb-2">{phone.name}</div>
                     <p className="text-gray-700 text-base">
-                      {laptop.description}
+                      {phone.description}
                     </p>
                   </div>
                   <div className="w-full px-6 pt-4 pb-2 flex justify-between items-center">
                     <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
-                      ${laptop.price}
+                      ${phone.price}
                     </span>
                     <button
                       className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
@@ -130,4 +138,4 @@ function LaptopsPage() {
   );
 }
 
-export default LaptopsPage;
+export default MobileDevices;

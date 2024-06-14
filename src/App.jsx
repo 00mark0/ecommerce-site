@@ -1,14 +1,21 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import Navbar from "./components/Navbar";
 
 import LandingPage from "./pages/landingPage/LandingPage";
+import ProductDetail from "./components/ProductDetail";
+
+import LaptopsPage from "./pages/laptopsPage/LaptopsPage";
+
+import PCPage from "./pages/pcPage/PcPage";
+import TVsPage from "./pages/tvsPage/TvsPage";
+import MobileDevicesPage from "./pages/mobileDevicesPage/MobileDevicesPage";
 /*
-import LaptopsPage from "./pages/LaptopsPage";
-import PCsPage from "./pages/PCsPage";
-import ConsolesPage from "./pages/ConsolesPage";
-import TVsPage from "./pages/TVsPage";
-import MobileDevicesPage from "./pages/MobileDevicesPage";
 import GeneralGearPage from "./pages/GeneralGearPage";
 import SignInPage from "./pages/SignInPage";
 import CartPage from "./pages/CartPage";
@@ -28,17 +35,29 @@ function App() {
     document.body.classList.toggle("dark", theme);
   }, [theme]);
 
+  function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null; // This component does not render anything
+  }
+
   return (
     <Router>
+      <ScrollToTop />
       <div>
         <Navbar theme={theme} setTheme={setTheme} />
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          {/*
+          <Route path="/product/:id" element={<ProductDetail />} />
           <Route path="/laptops" element={<LaptopsPage />} />
-          <Route path="/pcs" element={<PCsPage />} />
+          <Route path="/pcs" element={<PCPage />} />
           <Route path="/tvs" element={<TVsPage />} />
-          <Route path="/mobile-devices" element={<MobileDevicesPage />} />
+          <Route path="/mobiles" element={<MobileDevicesPage />} />
+          {/*
           <Route path="/general-gear" element={<GeneralGearPage />} />
           <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/cart" element={<CartPage />} />

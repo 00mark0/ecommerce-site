@@ -3,7 +3,7 @@ import "../styles/Newsletter.css";
 
 function Newsletter() {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center gap-5 mt-20">
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-5 mt-20 p-4">
       <img
         id="newsletterIcon"
         src={newsletter}

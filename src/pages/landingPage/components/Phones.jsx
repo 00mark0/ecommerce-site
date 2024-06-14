@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import productsData from "../../../../public/products.json";
 import girlWithPhone from "../assets/girlWithPhone.jpg";
+import { Link } from "react-router-dom";
 
 function Phones() {
   const [phones, setPhones] = useState([]);
@@ -38,19 +39,22 @@ function Phones() {
             className="grid lg:grid-cols-3 gap-4 p-10 cursor-pointer"
           >
             {phones.map((phone) => (
-              <div
-                key={phone.id}
-                className="flex flex-col items-center shadow-2xl p-4 rounded-md"
-              >
-                <img
-                  src={phone.image}
-                  alt={phone.name}
-                  className="w-32 h-32 object-cover mb-2 rounded-md"
-                />
-                <h2 className="text-lg font-bold text-center">{phone.name}</h2>
-                <p className="text-gray-500 text-center">{phone.description}</p>
-                <p className="mt-2 font-bold text-center">${phone.price}</p>
-              </div>
+              <Link to={`/product/${phone.id}`} key={phone.id}>
+                <div className="flex flex-col items-center shadow-2xl p-4 rounded-md">
+                  <img
+                    src={phone.image}
+                    alt={phone.name}
+                    className="w-32 h-32 object-cover mb-2 rounded-md"
+                  />
+                  <h2 className="text-lg font-bold text-center">
+                    {phone.name}
+                  </h2>
+                  <p className="text-gray-500 text-center">
+                    {phone.description}
+                  </p>
+                  <p className="mt-2 font-bold text-center">${phone.price}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>

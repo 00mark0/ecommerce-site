@@ -3,6 +3,7 @@ import pcs from "../assets/pcs.png";
 import tvs from "../assets/tvs.png";
 import mobiles from "../assets/mobiles.png";
 import techGear from "../assets/techGear.png";
+import { Link } from "react-router-dom";
 
 function Categories() {
   return (
@@ -15,22 +16,30 @@ function Categories() {
           Categories
         </h3>
         <div className="flex flex-col items-center justify-center lg:flex-row lg:justify-between shadow-2xl p-8 text-center">
-          <div className="flex flex-col cursor-pointer">
-            <img src={laptops} alt="laptops" width={92} height={92} />
-            <p>Laptops</p>
-          </div>
-          <div className="flex flex-col cursor-pointer">
-            <img src={pcs} alt="pcs" width={92} height={92} />
-            <p>PCs</p>
-          </div>
-          <div className="flex flex-col cursor-pointer">
-            <img src={tvs} alt="tvs" width={92} height={92} />
-            <p>TVs</p>
-          </div>
-          <div className="flex flex-col cursor-pointer">
-            <img src={mobiles} alt="mobiles" width={92} height={92} />
-            <p>Mobile Phones</p>
-          </div>
+          <Link to="/laptops">
+            <div className="flex flex-col cursor-pointer">
+              <img src={laptops} alt="laptops" width={92} height={92} />
+              <p>Laptops</p>
+            </div>
+          </Link>
+          <Link to="/pcs">
+            <div className="flex flex-col cursor-pointer">
+              <img src={pcs} alt="pcs" width={92} height={92} />
+              <p>PCs</p>
+            </div>
+          </Link>
+          <Link to="/tvs">
+            <div className="flex flex-col cursor-pointer">
+              <img src={tvs} alt="tvs" width={92} height={92} />
+              <p>TVs</p>
+            </div>
+          </Link>
+          <Link to="/mobiles">
+            <div className="flex flex-col cursor-pointer">
+              <img src={mobiles} alt="mobiles" width={92} height={92} />
+              <p>Mobile Devices</p>
+            </div>
+          </Link>
           <div className="flex flex-col cursor-pointer">
             <img src={techGear} alt="tech_gears" width={92} height={92} />
             <p>Tech Gear</p>

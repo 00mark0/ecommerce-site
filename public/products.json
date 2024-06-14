@@ -58,7 +58,7 @@
     "name": "HP Pavilion 15",
     "description": "15.6\" HD Touchscreen, Intel Quad-Core i5-1035G1 up to 3.6GHz, 12GB DDR4, 512GB SSD, 802.11ac, Bluetooth, Webcam, HDMI, Fingerprint Reader, Windows 10",
     "price": 649.99,
-    "image": "/assets/hp_pavilion_15.jpg",
+    "image": "/assets/hp_pavilion_15.png",
     "category": "laptops",
     "brand": "HP"
   },
@@ -193,7 +193,7 @@
     "name": "Dell OptiPlex 3070",
     "description": "Micro PC with Intel Core i5-9500T, 16GB DDR4 Memory, 256GB SSD, WiFi, HDMI, DisplayPort, Windows 10 Pro",
     "price": 679.0,
-    "image": "/images/dell_optiplex_3070.jpg",
+    "image": "/assets/dell_optiplex_3070.webp",
     "category": "pc",
     "brand": "Dell"
   },
@@ -202,7 +202,7 @@
     "name": "HP EliteDesk 800 G5",
     "description": "Mini PC with Intel Core i5-9500T, 16GB DDR4 Memory, 256GB SSD, WiFi, HDMI, DisplayPort, Windows 10 Pro",
     "price": 899.0,
-    "image": "/images/hp_elitedesk_800_g5.jpg",
+    "image": "/assets/hp_elitedesk_800_g5.jpg",
     "category": "pc",
     "brand": "HP"
   },
@@ -211,7 +211,7 @@
     "name": "Lenovo ThinkCentre M720q",
     "description": "Tiny PC with Intel Core i5-8400T, 16GB DDR4 Memory, 256GB SSD, WiFi, HDMI, DisplayPort, Windows 10 Pro",
     "price": 749.0,
-    "image": "/images/lenovo_thinkcentre_m720q.jpg",
+    "image": "/assets/lenovo_thinkcentre_m720q.avif",
     "category": "pc",
     "brand": "Lenovo"
   },
@@ -220,7 +220,7 @@
     "name": "Apple Mac Mini",
     "description": "Apple M1 Chip with 8-Core CPU and 8-Core GPU, 8GB Memory, 256GB SSD, Gigabit Ethernet",
     "price": 699.0,
-    "image": "/images/apple_mac_mini.jpg",
+    "image": "/assets/apple_mac_mini.jpg",
     "category": "pc",
     "brand": "Apple"
   },
@@ -229,7 +229,7 @@
     "name": "Acer Predator Orion 3000",
     "description": "Intel Core i7-9700K, GeForce RTX 2080 8GB, 16GB DDR4, 256GB PCIe NVMe SSD, 1TB HDD, Windows 10 Home",
     "price": 1999.99,
-    "image": "/images/acer_predator_orion_3000.jpg",
+    "image": "/assets/acer_predator_orion_3000.jpg",
     "category": "pc",
     "brand": "Acer"
   },
@@ -238,7 +238,7 @@
     "name": "Dell Alienware Aurora R10",
     "description": "AMD Ryzen 7 3700X, AMD Radeon RX 5700 XT 8GB GDDR6, 512GB SSD + 1TB HDD, 16GB, Windows 10 Home, AWAUR10-A886BLK-PUS",
     "price": 1699.99,
-    "image": "/images/dell_alienware_aurora_r10.jpg",
+    "image": "/assets/dell_alienware_aurora_r10.jpg",
     "category": "pc",
     "brand": "Dell"
   },
@@ -247,7 +247,7 @@
     "name": "HP Omen Obelisk",
     "description": "Intel Core i9-9900K, NVIDIA GeForce RTX 2080 SUPER 8 GB, HyperX 32 GB RAM, 1 TB SSD, VR Ready, Windows 10 Home (875-1023, Black)",
     "price": 2399.99,
-    "image": "/images/hp_omen_obelisk.jpg",
+    "image": "/assets/hp_omen_obelisk.jpg",
     "category": "pc",
     "brand": "HP"
   },
@@ -256,7 +256,7 @@
     "name": "Lenovo Legion Tower 5i",
     "description": "Intel Core i7-10700K, NVIDIA GeForce RTX 2060, 16GB DDR4, 512GB SSD + 1TB HDD, Windows 10 Home",
     "price": 1499.99,
-    "image": "/images/lenovo_legion_tower_5i.jpg",
+    "image": "/assets/lenovo_legion_tower_5i.avif",
     "category": "pc",
     "brand": "Lenovo"
   },
@@ -265,7 +265,7 @@
     "name": "Apple iMac",
     "description": "27-inch, 8GB RAM, 256GB SSD Storage",
     "price": 1799.0,
-    "image": "/images/apple_imac.jpg",
+    "image": "/assets/apple_imac.jpg",
     "category": "pc",
     "brand": "Apple"
   },
@@ -274,7 +274,7 @@
     "name": "Acer Aspire C27",
     "description": "27\" Full HD Display, 10th Gen Intel Core i5-1035G1, NVIDIA GeForce MX130, 12GB DDR4, 512GB NVMe M.2 SSD, 802.11ac Wi-Fi 5, Wireless Keyboard and Mouse, Windows 10 Home",
     "price": 799.99,
-    "image": "/images/acer_aspire_c27.jpg",
+    "image": "/assets/acer_aspire_c27.jpg",
     "category": "pc",
     "brand": "Acer"
   },
@@ -283,7 +283,7 @@
     "name": "Dell Inspiron 27 7000",
     "description": "27 Inch FHD All-in-One PC, Intel Core i7-10510U, 12GB Memory, 1TB HDD, Full HD (1920 x 1080) Anti-Glare, Pop-Up Webcam, Windows 10 Home",
     "price": 1149.99,
-    "image": "/images/dell_inspiron_27_7000.jpg",
+    "image": "/assets/dell_inspiron_27_7000.jpg",
     "category": "pc",
     "brand": "Dell"
   },
@@ -292,7 +292,7 @@
     "name": "HP Pavilion All-in-One",
     "description": "22-inch All in One Computer, Intel Core i3-8130U, 4GB RAM, 1TB Hard Drive, Windows 10 (22-c0030, White)",
     "price": 649.99,
-    "image": "/images/hp_pavilion_all_in_one.jpg",
+    "image": "/assets/hp_pavilion_all_in_one.jpeg",
     "category": "pc",
     "brand": "HP"
   },
@@ -301,7 +301,7 @@
     "name": "Lenovo IdeaCentre AIO 3",
     "description": "24\" All-in-One Computer, AMD Ryzen 5 4500U Mobile Processor, Integrated Graphics, 16GB DDR4, 512GB M.2 NVMe SSD, DVD RW Drive, Windows 10, F0EW005SUS, Business Black",
     "price": 719.99,
-    "image": "/images/lenovo_ideacentre_aio_3.jpg",
+    "image": "/assets/lenovo_ideacentre_aio_3.avif",
     "category": "pc",
     "brand": "Lenovo"
   },
@@ -319,7 +319,7 @@
     "name": "Acer Predator Orion 9000",
     "description": "Intel Core i7-8700K, GeForce GTX 1080 SLI, 32GB DDR4, 256GB PCIe NVMe SSD, 2TB HDD, Windows 10 Home",
     "price": 3999.99,
-    "image": "/images/acer_predator_orion_9000.jpg",
+    "image": "/assets/acer_predator_orion_9000.png",
     "category": "pc",
     "brand": "Acer"
   },
@@ -328,7 +328,7 @@
     "name": "Dell Alienware Area 51",
     "description": "Intel Core i9-9900K, NVIDIA GeForce RTX 2080 8GB GDDR6, 64GB DDR4 Memory, 2TB HDD + 256GB SSD, WiFi, HDMI, DVD-RW, Windows 10 Home",
     "price": 3199.99,
-    "image": "/images/dell_alienware_area_51.jpg",
+    "image": "/assets/dell_alienware_area_51.avif",
     "category": "pc",
     "brand": "Dell"
   },
@@ -337,7 +337,7 @@
     "name": "HP Omen X",
     "description": "Intel Core i7-7820HK, NVIDIA GeForce GTX 1080, 16GB RAM, 1TB hard drive, 256GB SSD, Windows 10 (P1000-025se, Black)",
     "price": 2199.99,
-    "image": "/images/hp_omen_x.jpg",
+    "image": "/assets/hp_omen_x.jpg",
     "category": "pc",
     "brand": "HP"
   },
@@ -346,7 +346,7 @@
     "name": "Lenovo Legion T730",
     "description": "Intel Core i7-9700K Processor, NVIDIA GeForce RTX 2070, 16 GB DDR4, 1 TB HDD + 512 GB SSD, Windows 10 Home",
     "price": 1599.99,
-    "image": "/images/lenovo_legion_t730.jpg",
+    "image": "/assets/lenovo_legion_t730.jpg",
     "category": "pc",
     "brand": "Lenovo"
   },
@@ -355,7 +355,7 @@
     "name": "Apple Mac Pro",
     "description": "Intel Xeon W, 32GB RAM, 256GB SSD Storage",
     "price": 5999.0,
-    "image": "/images/apple_mac_pro.jpg",
+    "image": "/assets/apple_mac_pro.jpg",
     "category": "pc",
     "brand": "Apple"
   },
@@ -373,7 +373,7 @@
     "name": "LG OLED55C1PUB",
     "description": "55\" 4K Smart OLED TV",
     "price": 1496.99,
-    "image": "/images/lg_oled55c1pub.jpg",
+    "image": "/assets/lg_oled55c1pub.avif",
     "category": "tv",
     "brand": "LG"
   },
@@ -382,7 +382,7 @@
     "name": "Sony X80J",
     "description": "65\" 4K Ultra HD LED Smart TV",
     "price": 898.0,
-    "image": "/images/sony_x80j.jpg",
+    "image": "/assets/sony_x80j.avif",
     "category": "tv",
     "brand": "Sony"
   },
@@ -391,7 +391,7 @@
     "name": "TCL 50S435",
     "description": "50\" 4K Ultra HD Roku Smart TV",
     "price": 378.0,
-    "image": "/images/tcl_50s435.jpg",
+    "image": "/assets/tcl_50s435.webp",
     "category": "tv",
     "brand": "TCL"
   },
@@ -400,7 +400,7 @@
     "name": "Hisense 43A6G",
     "description": "43\" 4K Ultra HD Android Smart TV",
     "price": 299.99,
-    "image": "/images/hisense_43a6g.jpg",
+    "image": "/assets/hisense_43a6g.webp",
     "category": "tv",
     "brand": "Hisense"
   },
@@ -409,7 +409,7 @@
     "name": "Vizio V-Series V405-H19",
     "description": "40\" 4K HDR Smart TV",
     "price": 229.99,
-    "image": "/images/vizio_v405-h19.jpg",
+    "image": "/assets/vizio_v405-h19.webp",
     "category": "tv",
     "brand": "Vizio"
   },
@@ -418,7 +418,7 @@
     "name": "Panasonic TX-55HX580BZ",
     "description": "55\" 4K Ultra HD LED TV",
     "price": 599.99,
-    "image": "/images/panasonic_tx-55hx580bz.jpg",
+    "image": "/assets/panasonic_tx-55hx580bz.jpg",
     "category": "tv",
     "brand": "Panasonic"
   },
@@ -436,7 +436,7 @@
     "name": "Sharp 4T-C50BJ2KE2FB",
     "description": "50\" 4K Ultra HD Smart TV",
     "price": 379.99,
-    "image": "/images/sharp_4t-c50bj2ke2fb.jpg",
+    "image": "/assets/sharp_4t-c50bj2ke2fb.jpg",
     "category": "tv",
     "brand": "Sharp"
   },
@@ -445,7 +445,7 @@
     "name": "Toshiba 32LL3A63DB",
     "description": "32\" Full HD Smart TV",
     "price": 199.99,
-    "image": "/images/toshiba_32ll3a63db.jpg",
+    "image": "/assets/toshiba_32ll3a63db.jpeg",
     "category": "tv",
     "brand": "Toshiba"
   },
@@ -454,7 +454,7 @@
     "name": "LG UN7000",
     "description": "43\" 4K Ultra HD Smart TV",
     "price": 349.99,
-    "image": "/images/lg_un7000.jpg",
+    "image": "/assets/lg_un7000.jpg",
     "category": "tv",
     "brand": "LG"
   },
@@ -463,7 +463,7 @@
     "name": "Samsung TU8000",
     "description": "50\" 4K Ultra HD Smart TV",
     "price": 467.99,
-    "image": "/images/samsung_tu8000.jpg",
+    "image": "/assets/samsung_tu8000.avif",
     "category": "tv",
     "brand": "Samsung"
   },
@@ -472,7 +472,7 @@
     "name": "Sony X750H",
     "description": "55\" 4K Ultra HD LED TV",
     "price": 698.0,
-    "image": "/images/sony_x750h.jpg",
+    "image": "/assets/sony_x750h.jpg",
     "category": "tv",
     "brand": "Sony"
   },
@@ -481,7 +481,7 @@
     "name": "Vizio M-Series M55Q7-H1",
     "description": "55\" 4K HDR Smart TV",
     "price": 498.0,
-    "image": "/images/vizio_m55q7-h1.jpg",
+    "image": "/assets/vizio_m55q7-h1.webp",
     "category": "tv",
     "brand": "Vizio"
   },
@@ -499,7 +499,7 @@
     "name": "Hisense H8G",
     "description": "55\" 4K ULED Smart TV",
     "price": 529.99,
-    "image": "/images/hisense_h8g.jpg",
+    "image": "/assets/hisense_h8g.jpg",
     "category": "tv",
     "brand": "Hisense"
   },
@@ -508,7 +508,7 @@
     "name": "Panasonic TX-50HX800BZ",
     "description": "50\" 4K Ultra HD Smart TV",
     "price": 699.99,
-    "image": "/images/panasonic_tx-50hx800bz.jpg",
+    "image": "/assets/panasonic_tx-50hx800bz.jpg",
     "category": "tv",
     "brand": "Panasonic"
   },
@@ -517,7 +517,7 @@
     "name": "Philips 50PUS8505/12",
     "description": "50\" 4K Ultra HD Smart TV",
     "price": 599.99,
-    "image": "/images/philips_50pus8505_12.jpg",
+    "image": "/assets/philips_50pus8505_12.jpg",
     "category": "tv",
     "brand": "Philips"
   },
@@ -526,7 +526,7 @@
     "name": "Sharp 4T-C55BJ3KF2FB",
     "description": "55\" 4K Ultra HD Smart TV",
     "price": 399.99,
-    "image": "/images/sharp_4t-c55bj3kf2fb.jpg",
+    "image": "/assets/sharp_4t-c55bj3kf2fb.jpg",
     "category": "tv",
     "brand": "Sharp"
   },
@@ -535,7 +535,7 @@
     "name": "Toshiba 43UL2063DB",
     "description": "43\" 4K Ultra HD Smart TV",
     "price": 329.99,
-    "image": "/images/toshiba_43ul2063db.jpg",
+    "image": "/assets/toshiba_43ul2063db.jpg",
     "category": "tv",
     "brand": "Toshiba"
   },
@@ -580,7 +580,7 @@
     "name": "Xiaomi Mi 11",
     "description": "128GB, Horizon Blue",
     "price": 699.99,
-    "image": "/images/xiaomi_mi_11.jpg",
+    "image": "/assets/xiaomi_mi_11.jpg",
     "category": "mobile",
     "brand": "Xiaomi"
   },
@@ -607,7 +607,7 @@
     "name": "Google Pixel 4a",
     "description": "128GB, Just Black",
     "price": 349.0,
-    "image": "/images/google_pixel_4a.jpg",
+    "image": "/assets/google_pixel_4a.jpg",
     "category": "mobile",
     "brand": "Google"
   },
@@ -616,7 +616,7 @@
     "name": "OnePlus Nord N10",
     "description": "128GB, Midnight Ice",
     "price": 299.99,
-    "image": "/images/oneplus_nord_n10.jpg",
+    "image": "/assets/oneplus_nord_n10.png",
     "category": "mobile",
     "brand": "OnePlus"
   },
@@ -625,7 +625,7 @@
     "name": "Xiaomi Redmi Note 10",
     "description": "128GB, Onyx Gray",
     "price": 199.99,
-    "image": "/images/xiaomi_redmi_note_10.jpg",
+    "image": "/assets/xiaomi_redmi_note_10.jpg",
     "category": "mobile",
     "brand": "Xiaomi"
   },
@@ -634,7 +634,7 @@
     "name": "Motorola Moto G Power",
     "description": "64GB, Flash Gray",
     "price": 249.99,
-    "image": "/images/motorola_moto_g_power.jpg",
+    "image": "/assets/motorola_moto_g_power.webp",
     "category": "mobile",
     "brand": "Motorola"
   },
@@ -643,7 +643,7 @@
     "name": "Nokia 5.4",
     "description": "64GB, Polar Night",
     "price": 249.99,
-    "image": "/images/nokia_5_4.jpg",
+    "image": "/assets/nokia_5_4.jpg",
     "category": "mobile",
     "brand": "Nokia"
   },
@@ -652,7 +652,7 @@
     "name": "Sony Xperia 10 II",
     "description": "128GB, Black",
     "price": 349.99,
-    "image": "/images/sony_xperia_10_ii.jpg",
+    "image": "/assets/sony_xperia_10_ii.avif",
     "category": "mobile",
     "brand": "Sony"
   },
@@ -661,7 +661,7 @@
     "name": "LG K92 5G",
     "description": "128GB, Titan Gray",
     "price": 359.99,
-    "image": "/images/lg_k92_5g.jpg",
+    "image": "/assets/lg_k92_5g.jpg",
     "category": "mobile",
     "brand": "LG"
   },
@@ -679,7 +679,7 @@
     "name": "Huawei P40 Pro",
     "description": "256GB, Silver Frost",
     "price": 899.99,
-    "image": "/images/huawei_p40_pro.jpg",
+    "image": "/assets/huawei_p40_pro.jpg",
     "category": "mobile",
     "brand": "Huawei"
   },
@@ -688,7 +688,7 @@
     "name": "Realme 8 Pro",
     "description": "128GB, Infinite Blue",
     "price": 279.99,
-    "image": "/images/realme_8_pro.jpg",
+    "image": "/assets/realme_8_pro.jpg",
     "category": "mobile",
     "brand": "Realme"
   },
@@ -697,7 +697,7 @@
     "name": "Oppo Find X3 Pro",
     "description": "256GB, Gloss Black",
     "price": 1149.99,
-    "image": "/images/oppo_find_x3_pro.jpg",
+    "image": "/assets/oppo_find_x3_pro.png",
     "category": "mobile",
     "brand": "Oppo"
   },
@@ -706,7 +706,7 @@
     "name": "ZTE Axon 30 Ultra",
     "description": "128GB, Black",
     "price": 749.99,
-    "image": "/images/zte_axon_30_ultra.jpg",
+    "image": "/assets/zte_axon_30_ultra.webp",
     "category": "mobile",
     "brand": "ZTE"
   },
@@ -715,7 +715,7 @@
     "name": "Vivo X60 Pro",
     "description": "256GB, Midnight Black",
     "price": 799.99,
-    "image": "/images/vivo_x60_pro.jpg",
+    "image": "/assets/vivo_x60_pro.webp",
     "category": "mobile",
     "brand": "Vivo"
   },

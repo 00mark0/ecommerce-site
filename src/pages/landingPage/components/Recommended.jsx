@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import productsData from "../../../../public/products.json";
+import { Link } from "react-router-dom";
 
 function Recommended() {
   const [recommendedProducts, setRecommendedProducts] = useState([]);
@@ -27,23 +28,22 @@ function Recommended() {
         </h4>
         <div className="flex flex-col lg:flex-row space-x-4 shadow-2xl gap-4">
           {recommendedProducts.map((product) => (
-            <div
-              key={product.id}
-              className="grid grid-rows-4 items-start shadow-2xl p-4 rounded-md cursor-pointer min-w-64 min-h-32"
-            >
-              <img
-                src={product.image}
-                alt={product.name}
-                className="lg:w-64 lg:h-48 mb-2 bg-cover row-span-2 rounded-md"
-              />
-              <h2 className="text-lg font-bold text-center mb-3">
-                {product.name}
-              </h2>
-              <p className="text-gray-500 text-center mb-2">
-                {product.description}
-              </p>
-              <p className="mt-2 font-bold text-center">${product.price}</p>
-            </div>
+            <Link to={`/product/${product.id}`} key={product.id}>
+              <div className="grid grid-rows-4 items-start shadow-2xl p-4 rounded-md cursor-pointer min-w-64 min-h-32">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="lg:w-64 lg:h-48 mb-2 bg-cover row-span-2 rounded-md"
+                />
+                <h2 className="text-lg font-bold text-center mb-3">
+                  {product.name}
+                </h2>
+                <p className="text-gray-500 text-center mb-2">
+                  {product.description}
+                </p>
+                <p className="mt-2 font-bold text-center">${product.price}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </div>

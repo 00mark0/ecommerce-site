@@ -10,6 +10,7 @@ import {
 import dark from "../assets/dark-mode-button.png";
 import light from "../assets/light-mode-button.png";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function Navbar({ theme, setTheme }) {
   const [openBars, setOpenBars] = useState(false);
@@ -47,7 +48,9 @@ function Navbar({ theme, setTheme }) {
               <FontAwesomeIcon icon={faBars} size="lg" />
             </button>
             <h1 id="logoText" className="text-2xl text-yellow-500">
-              ELECTRA
+              <Link to="/" className="no-underline text-yellow-500">
+                ELECTRA
+              </Link>
             </h1>
           </div>
           <div className="flex items-center gap-4">
@@ -83,7 +86,9 @@ function Navbar({ theme, setTheme }) {
               <FontAwesomeIcon icon={faBars} size="lg" />
             </button>
             <h1 id="logoText" className="text-2xl text-yellow-500">
-              ELECTRA
+              <Link to="/" className="no-underline text-yellow-500">
+                ELECTRA
+              </Link>
             </h1>
             <div className="flex items-center gap-2">
               <button className="cursor-pointer">
@@ -129,10 +134,18 @@ function Navbar({ theme, setTheme }) {
           <FontAwesomeIcon icon={faTimes} size="xl" />
         </button>
         <ul className="text-black">
-          <li>Page 1</li>
-          <li>Page 2</li>
-          <li>Page 3</li>
-          <li>Page 4</li>
+          <Link to="/laptops">
+            <li>Laptops</li>
+          </Link>
+          <Link to="/pcs">
+            <li>PCs</li>
+          </Link>
+          <Link to="/tvs">
+            <li>Tvs</li>
+          </Link>
+          <Link to="/mobiles">
+            <li>Mobile Devices</li>
+          </Link>
         </ul>
       </div>
     </>
