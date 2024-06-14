@@ -11,7 +11,6 @@ import LandingPage from "./pages/landingPage/LandingPage";
 import ProductDetail from "./components/ProductDetail";
 
 import LaptopsPage from "./pages/laptopsPage/LaptopsPage";
-
 import PCPage from "./pages/pcPage/PcPage";
 import TVsPage from "./pages/tvsPage/TvsPage";
 import MobileDevicesPage from "./pages/mobileDevicesPage/MobileDevicesPage";
@@ -20,6 +19,7 @@ import TechGear from "./pages/techGear/TechGear";
 import SignInPage from "./pages/SignInPage";
 import CartPage from "./pages/CartPage";
 */
+import { CartProvider } from "./components/CartContext";
 import "./App.css";
 
 function App() {
@@ -42,29 +42,31 @@ function App() {
       window.scrollTo(0, 0);
     }, [pathname]);
 
-    return null; // This component does not render anything
+    return null;
   }
 
   return (
-    <Router>
-      <ScrollToTop />
-      <div>
-        <Navbar theme={theme} setTheme={setTheme} />
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/laptops" element={<LaptopsPage />} />
-          <Route path="/pcs" element={<PCPage />} />
-          <Route path="/tvs" element={<TVsPage />} />
-          <Route path="/mobiles" element={<MobileDevicesPage />} />
-          <Route path="/tech-gear" element={<TechGear />} />
-          {/*
-          <Route path="/sign-in" element={<SignInPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          */}
-        </Routes>
-      </div>
-    </Router>
+    <CartProvider>
+      <Router>
+        <ScrollToTop />
+        <div>
+          <Navbar theme={theme} setTheme={setTheme} />
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/laptops" element={<LaptopsPage />} />
+            <Route path="/pcs" element={<PCPage />} />
+            <Route path="/tvs" element={<TVsPage />} />
+            <Route path="/mobiles" element={<MobileDevicesPage />} />
+            <Route path="/tech-gear" element={<TechGear />} />
+            {/*
+              <Route path="/sign-in" element={<SignInPage />} />
+              <Route path="/cart" element={<CartPage />} />
+              */}
+          </Routes>
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from "../pages/landingPage/components/Footer";
+import useCart from "../components/UseCart";
 import "../styles/ProductDetail.css";
 
 function ProductDetail() {
@@ -10,6 +11,7 @@ function ProductDetail() {
   // State for managing quantity
   const [quantity, setQuantity] = useState(1);
   const [relatedProducts, setRelatedProducts] = useState([]);
+  const { addItem } = useCart();
 
   useEffect(() => {
     fetch("/public/products.json")
@@ -40,6 +42,12 @@ function ProductDetail() {
   // Decrement quantity, ensuring it doesn't go below 1
   const decrementQuantity = () => {
     setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
+  };
+
+  const handleAddToCart = () => {
+    if (product) {
+      addItem({ ...product, quantity });
+    }
   };
 
   return (
@@ -94,7 +102,10 @@ function ProductDetail() {
                     +
                   </button>
                 </div>
-                <button className="py-2 px-8 rounded-full bg-yellow-400 text-black hover:bg-yellow-500">
+                <button
+                  onClick={handleAddToCart}
+                  className="py-2 px-8 rounded-full bg-yellow-400 text-black hover:bg-yellow-500"
+                >
                   Add to Cart
                 </button>
               </div>
