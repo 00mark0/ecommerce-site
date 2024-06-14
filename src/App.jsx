@@ -15,8 +15,8 @@ import LaptopsPage from "./pages/laptopsPage/LaptopsPage";
 import PCPage from "./pages/pcPage/PcPage";
 import TVsPage from "./pages/tvsPage/TvsPage";
 import MobileDevicesPage from "./pages/mobileDevicesPage/MobileDevicesPage";
+import TechGear from "./pages/techGear/TechGear";
 /*
-import GeneralGearPage from "./pages/GeneralGearPage";
 import SignInPage from "./pages/SignInPage";
 import CartPage from "./pages/CartPage";
 */
@@ -57,8 +57,8 @@ function App() {
           <Route path="/pcs" element={<PCPage />} />
           <Route path="/tvs" element={<TVsPage />} />
           <Route path="/mobiles" element={<MobileDevicesPage />} />
+          <Route path="/tech-gear" element={<TechGear />} />
           {/*
-          <Route path="/general-gear" element={<GeneralGearPage />} />
           <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/cart" element={<CartPage />} />
           */}

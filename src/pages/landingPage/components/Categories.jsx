@@ -40,10 +40,12 @@ function Categories() {
               <p>Mobile Devices</p>
             </div>
           </Link>
-          <div className="flex flex-col cursor-pointer">
-            <img src={techGear} alt="tech_gears" width={92} height={92} />
-            <p>Tech Gear</p>
-          </div>
+          <Link to="/tech-gear">
+            <div className="flex flex-col cursor-pointer">
+              <img src={techGear} alt="tech_gears" width={92} height={92} />
+              <p>Tech Gear</p>
+            </div>
+          </Link>
         </div>
       </section>
     </>

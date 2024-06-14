@@ -146,6 +146,9 @@ function Navbar({ theme, setTheme }) {
           <Link to="/mobiles">
             <li>Mobile Devices</li>
           </Link>
+          <Link to="/tech-gear">
+            <li>Tech Gear</li>
+          </Link>
         </ul>
       </div>
     </>
