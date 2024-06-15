@@ -44,9 +44,10 @@ const CartProvider = ({ children }) => {
     0
   );
 
-  const totalPrice = cart.reduce(
-    (total, item) => total + item.price * (item.quantity || 1),
-    0
+  const totalPrice = parseFloat(
+    cart
+      .reduce((total, item) => total + item.price * (item.quantity || 1), 0)
+      .toFixed(2)
   );
 
   return (

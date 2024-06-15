@@ -30,9 +30,11 @@ function Phones() {
               alt="girl with a phone"
               className="bg-cover w-64 h-96 rounded-md"
             />
-            <p className="text-center mt-5 lg:ml-0 cursor-pointer text-blue-500 text-xl font-semibold">
-              Phones Category
-            </p>
+            <Link to="/mobiles">
+              <p className="text-center mt-5 lg:ml-0 cursor-pointer text-blue-500 text-xl font-semibold">
+                Phones Category
+              </p>
+            </Link>
           </div>
           <div
             id="phoneContainer"

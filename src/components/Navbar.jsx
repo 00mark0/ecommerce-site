@@ -223,16 +223,18 @@ function Navbar({ theme, setTheme }) {
                 </div>
               </div>
               <div className="flex gap-4">
-                <button
-                  id="goToCart"
-                  className="py-2 px-8 rounded-full bg-yellow-500 hover:bg-yellow-700 text-black font-semibold"
-                >
-                  Go To Cart
-                </button>
+                <Link to="/cart">
+                  <button
+                    id="goToCart"
+                    className="py-1 px-4 lg:py-2 lg:px-8 rounded-full bg-yellow-500 hover:bg-yellow-700 text-black font-semibold"
+                  >
+                    Go To Cart
+                  </button>
+                </Link>
                 <button
                   id="clearCart"
                   onClick={clearCart}
-                  className="py-2 px-8 rounded-full bg-yellow-500 hover:bg-yellow-700 text-black font-semibold"
+                  className="py-1 px-4 lg:py-2 lg:px-8 rounded-full bg-yellow-500 hover:bg-yellow-700 text-black font-semibold"
                 >
                   Clear Cart
                 </button>
