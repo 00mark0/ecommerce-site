@@ -11,14 +11,22 @@ import dark from "../assets/dark-mode-button.png";
 import light from "../assets/light-mode-button.png";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import useCart from "./UseCart";
 
 function Navbar({ theme, setTheme }) {
   const [openBars, setOpenBars] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
+  const cartMenuRef = useRef(null);
+  const { cart, removeItem, clearCart, cartItemCount, totalPrice } = useCart();
 
   const toggleBars = () => {
     setOpenBars(!openBars);
+  };
+
+  const toggleCart = () => {
+    setOpenCart(!openCart);
   };
 
   useEffect(() => {
@@ -26,9 +34,12 @@ function Navbar({ theme, setTheme }) {
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
-        !buttonRef.current.contains(event.target)
+        !buttonRef.current.contains(event.target) &&
+        cartMenuRef.current && // Check if the click is outside the cart menu as well
+        !cartMenuRef.current.contains(event.target)
       ) {
         setOpenBars(false);
+        setOpenCart(false); // Close the cart menu if clicking outside
       }
     }
 
@@ -36,7 +47,7 @@ function Navbar({ theme, setTheme }) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [menuRef, buttonRef]);
+  }, [menuRef, buttonRef, cartMenuRef]);
 
   return (
     <>
@@ -67,8 +78,13 @@ function Navbar({ theme, setTheme }) {
             <button className="cursor-pointer">
               <FontAwesomeIcon icon={faUser} size="lg" />
             </button>
-            <button className="cursor-pointer">
+            <button className="cursor-pointer" onClick={toggleCart}>
               <FontAwesomeIcon icon={faShoppingCart} size="lg" />
+              {cartItemCount > 0 && (
+                <span className="bg-red-500 text-white rounded-full px-2 font-semibold">
+                  {cartItemCount}
+                </span>
+              )}
             </button>
             <button onClick={() => setTheme(!theme)} className="cursor-pointer">
               <img
@@ -94,8 +110,13 @@ function Navbar({ theme, setTheme }) {
               <button className="cursor-pointer">
                 <FontAwesomeIcon icon={faUser} size="lg" />
               </button>
-              <button className="cursor-pointer">
+              <button className="cursor-pointer flex" onClick={toggleCart}>
                 <FontAwesomeIcon icon={faShoppingCart} size="lg" />
+                {cartItemCount > 0 && (
+                  <span className="bg-red-500 text-white rounded-full px-2 font-semibold">
+                    {cartItemCount}
+                  </span>
+                )}
               </button>
               <button
                 onClick={() => setTheme(!theme)}
@@ -104,7 +125,7 @@ function Navbar({ theme, setTheme }) {
                 <img
                   src={theme ? dark : light}
                   alt="theme"
-                  className="w-16 h-8"
+                  className="w-16 h-8 bg-cover"
                 />
               </button>
             </div>
@@ -150,6 +171,79 @@ function Navbar({ theme, setTheme }) {
             <li>Tech Gear</li>
           </Link>
         </ul>
+      </div>
+      <div
+        id="cartMenu"
+        className={`cartMenu ${openCart ? "open" : ""}`}
+        ref={cartMenuRef}
+      >
+        <button
+          className="closeButton cursor-pointer text-black"
+          onClick={toggleCart}
+        >
+          <FontAwesomeIcon icon={faTimes} size="xl" />
+        </button>
+        {/* Conditionally render content based on cartItemCount */}
+        {cartItemCount > 0 ? (
+          <div className="w-full">
+            {/* Existing cart items rendering */}
+            <div id="productCard" className="space-y-4">
+              {cart.map((item) => (
+                <div
+                  key={item.id}
+                  className="bg-white rounded-lg shadow-md p-4 flex items-center space-x-4"
+                >
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-20 h-20 object-cover rounded-md"
+                  />
+                  <div className="flex-1">
+                    <h3 className="text-black text-lg font-semibold">
+                      {item.name}
+                    </h3>
+                    <p className="text-gray-500">${item.price}</p>
+                  </div>
+                  <button
+                    className="text-red-500 hover:text-red-700"
+                    onClick={() => removeItem(item.id)}
+                  >
+                    <FontAwesomeIcon icon={faTimes} size="lg" />
+                  </button>
+                </div>
+              ))}
+            </div>
+            <div className="w-full flex flex-col items-center">
+              <div id="cartTotal" className="w-full mt-10 mb-10">
+                <div className="flex justify-between">
+                  <p className="text-lg text-gray-500 font-semibold">Total</p>
+                  <p className="text-lg text-black font-semibold">
+                    ${totalPrice}
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <button
+                  id="goToCart"
+                  className="py-2 px-8 rounded-full bg-yellow-500 hover:bg-yellow-700 text-black font-semibold"
+                >
+                  Go To Cart
+                </button>
+                <button
+                  id="clearCart"
+                  onClick={clearCart}
+                  className="py-2 px-8 rounded-full bg-yellow-500 hover:bg-yellow-700 text-black font-semibold"
+                >
+                  Clear Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <div className="w-full flex justify-center items-center">
+            <p className="text-black text-lg">Your cart is empty.</p>
+          </div>
+        )}
       </div>
     </>
   );

@@ -4,11 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../landingPage/components/Footer";
 import { Link } from "react-router-dom";
+import useCart from "../../components/UseCart";
 
 function MobileDevices() {
   const [phones, setPhones] = useState([]);
   const [sortMethod, setSortMethod] = useState("");
   const [selectedBrand, setSelectedBrand] = useState("");
+  const { addItem } = useCart();
 
   useEffect(() => {
     let filteredPhones = productData.filter(
@@ -92,43 +94,46 @@ function MobileDevices() {
           </div>
           <div
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 p-4"
-            id="phonesGrid"
+            id="mobileDevicesGrid"
           >
-            {phones.map((phone) => (
-              <Link
-                to={`/product/${phone.id}`}
-                key={phone.id}
-                style={{ textDecoration: "none" }}
+            {phones.map((device) => (
+              <div
+                className="max-w-xs rounded overflow-hidden shadow-2xl m-2 flex flex-col items-center min-h-full"
+                key={device.id}
               >
-                <div className="max-w-xs rounded overflow-hidden shadow-2xl m-2 flex flex-col items-center min-h-full">
+                <Link
+                  to={`/product/${device.id}`}
+                  style={{ textDecoration: "none" }}
+                >
                   <img
                     className="w-full rounded-md bg-cover"
-                    src={phone.image}
-                    alt={phone.name}
+                    src={device.image}
+                    alt={device.name}
                     style={{ height: "300px" }}
                   />
                   <div className="px-6 py-4">
-                    <div className="font-bold text-xl mb-2">{phone.name}</div>
+                    <div className="font-bold text-xl mb-2">{device.name}</div>
                     <p className="text-gray-700 text-base">
-                      {phone.description}
+                      {device.description}
                     </p>
                   </div>
-                  <div className="w-full px-6 pt-4 pb-2 flex justify-between items-center">
-                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
-                      ${phone.price}
-                    </span>
-                    <button
-                      className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
-                      type="button"
-                    >
-                      <FontAwesomeIcon
-                        icon={faShoppingCart}
-                        className="text-black"
-                      />
-                    </button>
-                  </div>
+                </Link>
+                <div className="w-full px-6 pt-4 pb-2 flex justify-between items-center">
+                  <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-lg font-semibold text-gray-700">
+                    ${device.price}
+                  </span>
+                  <button
+                    className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
+                    type="button"
+                    onClick={() => addItem(device)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faShoppingCart}
+                      className="text-black"
+                    />
+                  </button>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>

@@ -9,7 +9,6 @@ function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   // State for managing quantity
-  const [quantity, setQuantity] = useState(1);
   const [relatedProducts, setRelatedProducts] = useState([]);
   const { addItem } = useCart();
 
@@ -34,19 +33,9 @@ function ProductDetail() {
       });
   }, [id]);
 
-  // Increment quantity
-  const incrementQuantity = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
-
-  // Decrement quantity, ensuring it doesn't go below 1
-  const decrementQuantity = () => {
-    setQuantity((prevQuantity) => (prevQuantity > 1 ? prevQuantity - 1 : 1));
-  };
-
   const handleAddToCart = () => {
     if (product) {
-      addItem({ ...product, quantity });
+      addItem({ ...product, product });
     }
   };
 
@@ -84,24 +73,6 @@ function ProductDetail() {
                 </p>
               </div>
               <div className="flex flex-col lg:flex-row items-center justify-center gap-10">
-                {/* Counter UI */}
-                <div className="flex items-center justify-center gap-2 py-2 px-8 bg-gray-400 hover:bg-gray-500 rounded-full">
-                  <button
-                    onClick={decrementQuantity}
-                    className="text-black text-xl font-bold"
-                  >
-                    -
-                  </button>
-                  <span className="text-black text-xl font-bold">
-                    {quantity}
-                  </span>
-                  <button
-                    onClick={incrementQuantity}
-                    className="text-black text-xl font-bold"
-                  >
-                    +
-                  </button>
-                </div>
                 <button
                   onClick={handleAddToCart}
                   className="py-2 px-8 rounded-full bg-yellow-400 text-black hover:bg-yellow-500"

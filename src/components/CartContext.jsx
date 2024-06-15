@@ -1,20 +1,37 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
-// Define CartContext
 const CartContext = createContext();
 
-// Create CartProvider Component
 const CartProvider = ({ children }) => {
-  const [cart, setCart] = useState([]);
-  console.log(cart);
+  const [cart, setCart] = useState(() => {
+    const localData = localStorage.getItem("cart");
+    return localData ? JSON.parse(localData) : [];
+  });
+
+  useEffect(() => {
+    console.clear();
+    console.log(cart);
+  }, [cart]);
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const addItem = (productToAdd) => {
-    setCart((currentCart) => [...currentCart, productToAdd, productToAdd]);
+    setCart((currentCart) => {
+      const isProductInCart = currentCart.some(
+        (item) => item.id === productToAdd.id
+      );
+      if (!isProductInCart) {
+        return [...currentCart, productToAdd];
+      } else {
+        return currentCart;
+      }
+    });
   };
 
   const removeItem = (itemId) => {
-    console.log(`Removing product: ${itemId}`);
     setCart((currentCart) => currentCart.filter((item) => item.id !== itemId));
   };
 
@@ -22,14 +39,32 @@ const CartProvider = ({ children }) => {
     setCart([]);
   };
 
+  const cartItemCount = cart.reduce(
+    (total, item) => total + (item.quantity || 1),
+    0
+  );
+
+  const totalPrice = cart.reduce(
+    (total, item) => total + item.price * (item.quantity || 1),
+    0
+  );
+
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, clearCart }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addItem,
+        removeItem,
+        clearCart,
+        cartItemCount,
+        totalPrice,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
 };
 
-// PropTypes for CartProvider
 CartProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };

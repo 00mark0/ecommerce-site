@@ -4,11 +4,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import Footer from "../landingPage/components/Footer";
 import { Link } from "react-router-dom";
+import useCart from "../../components/UseCart";
 
 function PcPage() {
   const [pcs, setPcs] = useState([]);
   const [sortMethod, setSortMethod] = useState("");
   const [selectedBrand, setSelectedBrand] = useState("");
+  const { addItem } = useCart();
 
   useEffect(() => {
     let filteredPcs = productData.filter(
@@ -85,12 +87,14 @@ function PcPage() {
             id="pcsGrid"
           >
             {pcs.map((pc) => (
-              <Link
-                to={`/product/${pc.id}`}
+              <div
+                className="max-w-xs rounded overflow-hidden shadow-2xl m-2 flex flex-col items-center min-h-full"
                 key={pc.id}
-                style={{ textDecoration: "none" }}
               >
-                <div className="max-w-xs rounded overflow-hidden shadow-2xl m-2 flex flex-col items-center min-h-full">
+                <Link
+                  to={`/product/${pc.id}`}
+                  style={{ textDecoration: "none" }}
+                >
                   <img
                     className="w-full rounded-md bg-cover"
                     src={pc.image}
@@ -101,22 +105,23 @@ function PcPage() {
                     <div className="font-bold text-xl mb-2">{pc.name}</div>
                     <p className="text-gray-700 text-base">{pc.description}</p>
                   </div>
-                  <div className="w-full px-6 pt-4 pb-2 flex justify-between items-center">
-                    <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
-                      ${pc.price}
-                    </span>
-                    <button
-                      className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
-                      type="button"
-                    >
-                      <FontAwesomeIcon
-                        icon={faShoppingCart}
-                        className="text-black"
-                      />
-                    </button>
-                  </div>
+                </Link>{" "}
+                <div className="w-full px-6 pt-4 pb-2 flex justify-between items-center">
+                  <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-lg font-semibold text-gray-700">
+                    ${pc.price}
+                  </span>
+                  <button
+                    className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
+                    type="button"
+                    onClick={() => addItem(pc)}
+                  >
+                    <FontAwesomeIcon
+                      icon={faShoppingCart}
+                      className="text-black"
+                    />
+                  </button>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
         </div>
