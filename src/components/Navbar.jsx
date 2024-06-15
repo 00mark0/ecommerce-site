@@ -156,19 +156,19 @@ function Navbar({ theme, setTheme }) {
         </button>
         <ul className="text-black">
           <Link to="/laptops">
-            <li>Laptops</li>
+            <li onClick={toggleBars}>Laptops</li>
           </Link>
           <Link to="/pcs">
-            <li>PCs</li>
+            <li onClick={toggleBars}>PCs</li>
           </Link>
           <Link to="/tvs">
-            <li>Tvs</li>
+            <li onClick={toggleBars}>Tvs</li>
           </Link>
           <Link to="/mobiles">
-            <li>Mobile Devices</li>
+            <li onClick={toggleBars}>Mobile Devices</li>
           </Link>
           <Link to="/tech-gear">
-            <li>Tech Gear</li>
+            <li onClick={toggleBars}>Tech Gear</li>
           </Link>
         </ul>
       </div>
@@ -226,6 +226,7 @@ function Navbar({ theme, setTheme }) {
                 <Link to="/cart">
                   <button
                     id="goToCart"
+                    onClick={toggleCart}
                     className="py-1 px-4 lg:py-2 lg:px-8 rounded-full bg-yellow-500 hover:bg-yellow-700 text-black font-semibold"
                   >
                     Go To Cart
