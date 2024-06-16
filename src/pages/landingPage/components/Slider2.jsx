@@ -6,7 +6,6 @@ import "../styles/Sliders.css";
 import productsData from "../../../../public/products.json";
 import { Link } from "react-router-dom";
 
-// Custom arrow components for the slider
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
@@ -74,26 +73,22 @@ function Slider2() {
   useEffect(() => {
     const timerStart = localStorage.getItem("timerStart");
     const now = new Date().getTime();
-    const sixteenHours = 16 * 60 * 60 * 1000; // 16 hours in milliseconds
+    const sixteenHours = 16 * 60 * 60 * 1000;
 
     if (!timerStart || now - timerStart > sixteenHours) {
-      // If the timer hasn't started or 16 hours have passed, reset the timer and store the start time
       localStorage.setItem("timerStart", now);
       setAutoplaySpeed(0);
       setTimeLeft(sixteenHours / 1000);
     } else {
-      // If less than 16 hours have passed, calculate the remaining time
       const remainingTime = sixteenHours - (now - timerStart);
       setAutoplaySpeed(remainingTime);
-      setTimeLeft(Math.floor(remainingTime / 1000)); // Round down to the nearest whole number
+      setTimeLeft(Math.floor(remainingTime / 1000));
     }
 
-    // Update the time left every second
     const interval = setInterval(() => {
-      setTimeLeft((timeLeft) => Math.max(timeLeft - 1, 0)); // Ensure timeLeft never goes below 0
+      setTimeLeft((timeLeft) => Math.max(timeLeft - 1, 0));
     }, 1000);
 
-    // Clear the interval when the component is unmounted
     return () => clearInterval(interval);
   }, []);
 

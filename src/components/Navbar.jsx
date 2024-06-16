@@ -35,11 +35,11 @@ function Navbar({ theme, setTheme }) {
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
         !buttonRef.current.contains(event.target) &&
-        cartMenuRef.current && // Check if the click is outside the cart menu as well
+        cartMenuRef.current &&
         !cartMenuRef.current.contains(event.target)
       ) {
         setOpenBars(false);
-        setOpenCart(false); // Close the cart menu if clicking outside
+        setOpenCart(false);
       }
     }
 
@@ -183,10 +183,8 @@ function Navbar({ theme, setTheme }) {
         >
           <FontAwesomeIcon icon={faTimes} size="xl" />
         </button>
-        {/* Conditionally render content based on cartItemCount */}
         {cartItemCount > 0 ? (
           <div className="w-full">
-            {/* Existing cart items rendering */}
             <div id="productCard" className="space-y-4">
               {cart.map((item) => (
                 <div

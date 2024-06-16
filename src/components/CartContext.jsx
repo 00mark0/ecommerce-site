@@ -20,13 +20,8 @@ const CartProvider = ({ children }) => {
       );
       if (!isProductInCart) {
         return [...currentCart, { ...productToAdd, quantity: 1 }];
-      } else {
-        return currentCart.map((item) =>
-          item.id === productToAdd.id
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
       }
+      return currentCart;
     });
   };
 
@@ -54,7 +49,7 @@ const CartProvider = ({ children }) => {
   const totalPrice = parseFloat(
     cart
       .reduce((total, item) => {
-        const itemPrice = Number(item.price); // Ensure item.price is treated as a number
+        const itemPrice = Number(item.price);
         return (
           total + (isNaN(itemPrice) ? 0 : itemPrice * (item.quantity || 1))
         );

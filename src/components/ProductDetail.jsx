@@ -8,7 +8,6 @@ import "../styles/ProductDetail.css";
 function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
-  // State for managing quantity
   const [relatedProducts, setRelatedProducts] = useState([]);
   const { addItem } = useCart();
 
@@ -21,7 +20,6 @@ function ProductDetail() {
         );
         setProduct(currentProduct);
 
-        // Filter related products
         const related = products
           .filter(
             (p) =>

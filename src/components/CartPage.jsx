@@ -19,7 +19,7 @@ function CartPage() {
         <div className="flex flex-col lg:flex-row justify-center gap-10">
           <div id="cartCards" className="flex flex-col gap-4 w-full lg:w-5/12">
             {cartItemCount === 0 ? (
-              <p className="text-lg text-center">Your cart is empty</p>
+              <p className="text-lg text-center mt-5">Your cart is empty</p>
             ) : (
               cart.map((item, index) => (
                 <div
