@@ -6,7 +6,12 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 function CartPage() {
-  const { cart, removeItem, totalPrice, cartItemCount } = useCart();
+  const { cart, removeItem, totalPrice, cartItemCount, updateQuantity } =
+    useCart();
+
+  const handleQuantityChange = (itemId, newQuantity) => {
+    updateQuantity(itemId, newQuantity);
+  };
 
   return (
     <>
@@ -30,12 +35,21 @@ function CartPage() {
                     <p className="text-lg font-bold mb-5">{item.name}</p>
                     <p className="text-sm text-gray-500">{item.description}</p>
                     <div className="flex items-center justify-center mt-2 rounded-full border-2 border-gray-400 w-32">
-                      <button className="text-xl font-semibold px-3 py-1 rounded-lg">
+                      <button
+                        className="text-xl font-semibold px-3 py-1 rounded-lg"
+                        onClick={() =>
+                          handleQuantityChange(item.id, item.quantity - 1)
+                        }
+                      >
                         -
                       </button>
-                      <span className="px-4">1</span>{" "}
-                      {/* Placeholder for quantity */}
-                      <button className="text-xl font-semibold px-3 py-1 rounded-lg">
+                      <span className="px-4">{item.quantity}</span>
+                      <button
+                        className="text-xl font-semibold px-3 py-1 rounded-lg"
+                        onClick={() =>
+                          handleQuantityChange(item.id, item.quantity + 1)
+                        }
+                      >
                         +
                       </button>
                     </div>

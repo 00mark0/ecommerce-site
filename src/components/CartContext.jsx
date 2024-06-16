@@ -10,11 +10,6 @@ const CartProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    console.clear();
-    console.log(cart);
-  }, [cart]);
-
-  useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
@@ -24,15 +19,27 @@ const CartProvider = ({ children }) => {
         (item) => item.id === productToAdd.id
       );
       if (!isProductInCart) {
-        return [...currentCart, productToAdd];
+        return [...currentCart, { ...productToAdd, quantity: 1 }];
       } else {
-        return currentCart;
+        return currentCart.map((item) =>
+          item.id === productToAdd.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
       }
     });
   };
 
   const removeItem = (itemId) => {
     setCart((currentCart) => currentCart.filter((item) => item.id !== itemId));
+  };
+
+  const updateQuantity = (itemId, quantity) => {
+    setCart((currentCart) =>
+      currentCart.map((item) =>
+        item.id === itemId ? { ...item, quantity: Math.max(quantity, 1) } : item
+      )
+    );
   };
 
   const clearCart = () => {
@@ -46,7 +53,12 @@ const CartProvider = ({ children }) => {
 
   const totalPrice = parseFloat(
     cart
-      .reduce((total, item) => total + item.price * (item.quantity || 1), 0)
+      .reduce((total, item) => {
+        const itemPrice = Number(item.price); // Ensure item.price is treated as a number
+        return (
+          total + (isNaN(itemPrice) ? 0 : itemPrice * (item.quantity || 1))
+        );
+      }, 0)
       .toFixed(2)
   );
 
@@ -56,6 +68,7 @@ const CartProvider = ({ children }) => {
         cart,
         addItem,
         removeItem,
+        updateQuantity,
         clearCart,
         cartItemCount,
         totalPrice,
