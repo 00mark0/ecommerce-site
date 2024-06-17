@@ -35,7 +35,7 @@ function Categories() {
             </div>
           </Link>
           <Link to="/mobiles">
-            <div className="flex flex-col cursor-pointer">
+            <div className="flex flex-col items-center cursor-pointer">
               <img src={mobiles} alt="mobiles" width={92} height={92} />
               <p>Mobile Devices</p>
             </div>

@@ -1,10 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 
 import LandingPage from "./pages/landingPage/LandingPage";
@@ -17,6 +12,7 @@ import MobileDevicesPage from "./pages/mobileDevicesPage/MobileDevicesPage";
 import TechGear from "./pages/techGear/TechGear";
 import CartPage from "./components/CartPage";
 import SearchPage from "./components/SearchPage";
+import ScrollToTop from "./components/ScrollToTop";
 /*
 import SignInPage from "./pages/SignInPage";
 */
@@ -35,16 +31,6 @@ function App() {
   useEffect(() => {
     document.body.classList.toggle("dark", theme);
   }, [theme]);
-
-  function ScrollToTop() {
-    const { pathname } = useLocation();
-
-    useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
-
-    return null;
-  }
 
   return (
     <CartProvider>
