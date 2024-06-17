@@ -6,20 +6,29 @@ import {
   faUser,
   faSearch,
   faTimes,
+  faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import dark from "../assets/dark-mode-button.png";
 import light from "../assets/light-mode-button.png";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useCart from "./UseCart";
 
 function Navbar({ theme, setTheme }) {
   const [openBars, setOpenBars] = useState(false);
   const [openCart, setOpenCart] = useState(false);
   const menuRef = useRef(null);
-  const buttonRef = useRef(null);
   const cartMenuRef = useRef(null);
   const { cart, removeItem, clearCart, cartItemCount, totalPrice } = useCart();
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    navigate(`/search?query=${encodeURIComponent(searchTerm)}`);
+    setSearchTerm("");
+  };
 
   const toggleBars = () => {
     setOpenBars(!openBars);
@@ -34,7 +43,6 @@ function Navbar({ theme, setTheme }) {
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
-        !buttonRef.current.contains(event.target) &&
         cartMenuRef.current &&
         !cartMenuRef.current.contains(event.target)
       ) {
@@ -47,7 +55,7 @@ function Navbar({ theme, setTheme }) {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [menuRef, buttonRef, cartMenuRef]);
+  }, []);
 
   return (
     <>
@@ -65,14 +73,18 @@ function Navbar({ theme, setTheme }) {
             </h1>
           </div>
           <div className="flex items-center gap-4">
-            <input
-              type="text"
-              placeholder="Search products"
-              className="rounded-lg border border-black w-96 h-8 px-2"
-            />
-            <button className="cursor-pointer">
-              <FontAwesomeIcon icon={faSearch} size="lg" />
-            </button>
+            <form onSubmit={handleSearch} className="flex gap-2">
+              <input
+                type="text"
+                placeholder="Search products"
+                className="rounded-lg border border-black w-96 h-8 px-2 text-black"
+                value={searchTerm || ""}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <button className="cursor-pointer" type="submit">
+                <FontAwesomeIcon icon={faSearch} size="lg" />
+              </button>
+            </form>
           </div>
           <div className="flex items-center gap-4">
             <button className="cursor-pointer">
@@ -131,46 +143,89 @@ function Navbar({ theme, setTheme }) {
             </div>
           </div>
           <div className="flex items-center mt-4 gap-2">
-            <input
-              type="text"
-              placeholder="Search products"
-              className="rounded-lg border border-black w-80 sm:96 h-8 px-2"
-            />
-            <button className="cursor-pointer">
-              <FontAwesomeIcon icon={faSearch} size="lg" />
-            </button>
+            <form onSubmit={handleSearch} className="flex gap-2">
+              <input
+                type="text"
+                placeholder="Search products"
+                className="rounded-lg border border-black w-80 sm:96 h-8 px-2 text-black"
+                value={searchTerm || ""}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              <button type="submit" className="cursor-pointer">
+                <FontAwesomeIcon icon={faSearch} size="lg" />
+              </button>
+            </form>
           </div>
         </nav>
       </div>
       <div
         id="sideBar"
-        className={`menu ${openBars ? "open" : ""}`}
+        className={`menu ${
+          openBars ? "open" : ""
+        } bg-white fixed top-0 left-0 min-h-screen transform transition-transform duration-300 ease-in-out ${
+          openBars ? "translate-x-0" : "-translate-x-full"
+        } z-50`}
         ref={menuRef}
       >
         <button
-          className="cursor-pointer menu-button text-black"
+          className="cursor-pointer p-4 absolute top-0 right-0 text-black"
           onClick={toggleBars}
-          ref={buttonRef}
         >
           <FontAwesomeIcon icon={faTimes} size="xl" />
         </button>
-        <ul className="text-black">
-          <Link to="/laptops">
-            <li onClick={toggleBars}>Laptops</li>
-          </Link>
-          <Link to="/pcs">
-            <li onClick={toggleBars}>PCs</li>
-          </Link>
-          <Link to="/tvs">
-            <li onClick={toggleBars}>Tvs</li>
-          </Link>
-          <Link to="/mobiles">
-            <li onClick={toggleBars}>Mobile Devices</li>
-          </Link>
-          <Link to="/tech-gear">
-            <li onClick={toggleBars}>Tech Gear</li>
-          </Link>
-        </ul>
+        {openBars && (
+          <ul className="text-black p-4">
+            <div className="group w-32">
+              <Link
+                to="/search?query="
+                className="flex items-center justify-between"
+                onMouseEnter={() => setIsExpanded(true)}
+                onMouseLeave={() => setIsExpanded(false)}
+              >
+                <span className="text-xl">Shop</span>
+                <FontAwesomeIcon
+                  icon={faChevronDown}
+                  className={`transition-transform duration-300 ${
+                    isExpanded ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+              </Link>
+              <div
+                className={`additional-links overflow-hidden transition-all duration-500 ease-in-out ${
+                  isExpanded && openBars
+                    ? "max-h-96 opacity-100"
+                    : "max-h-0 opacity-0"
+                }`}
+              >
+                <Link to="/laptops" className="block">
+                  <li onClick={toggleBars} className="py-2 hover:bg-gray-200">
+                    Laptops
+                  </li>
+                </Link>
+                <Link to="/pcs" className="block">
+                  <li onClick={toggleBars} className="py-2 hover:bg-gray-200">
+                    PCs
+                  </li>
+                </Link>
+                <Link to="/tvs" className="block">
+                  <li onClick={toggleBars} className="py-2 hover:bg-gray-200">
+                    TVs
+                  </li>
+                </Link>
+                <Link to="/mobiles" className="block">
+                  <li onClick={toggleBars} className="py-2 hover:bg-gray-200">
+                    Mobile Devices
+                  </li>
+                </Link>
+                <Link to="/tech-gear" className="block">
+                  <li onClick={toggleBars} className="py-2 hover:bg-gray-200">
+                    Tech Gear
+                  </li>
+                </Link>
+              </div>
+            </div>
+          </ul>
+        )}
       </div>
       <div
         id="cartMenu"

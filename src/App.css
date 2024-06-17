@@ -47,6 +47,29 @@ body.dark {
   cursor: pointer;
 }
 
+/* Adjusted to initially hide non-Shop links */
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li:first-child {
+  /* Visible by default */
+}
+
+.menu ul .additional-links {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.group:hover .additional-links {
+  max-height: 500px; /* Adjust based on the content */
+  opacity: 1;
+}
+
 @media (max-width: 768px) {
   .menu {
     width: 91%;

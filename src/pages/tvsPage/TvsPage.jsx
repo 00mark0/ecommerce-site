@@ -60,6 +60,7 @@ function TvsPage() {
               className="bg-gray-400 p-2 rounded-xl font-semibold"
               onChange={handleSortChange}
             >
+              <option value="">Sort by</option>
               <option value="highest">Highest Price</option>
               <option value="lowest">Lowest Price</option>
               <option value="name">Name</option>
@@ -106,7 +107,7 @@ function TvsPage() {
                     alt={tv.name}
                     style={{ height: "300px" }}
                   />
-                  <div className="px-6 py-4">
+                  <div className="px-6 py-4 min-h-48">
                     <div className="font-bold text-xl mb-2">{tv.name}</div>
                     <p className="text-gray-700 text-base">{tv.description}</p>
                   </div>

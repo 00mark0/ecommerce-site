@@ -51,7 +51,9 @@ function Footer() {
         </div>
       </div>
       <div className="flex flex-col xl:flex-row xl:w-7/12 mx-auto mt-10 gap-10 lg:gap-0 pb-20 text-white font-semibold items-center  justify-between">
-        <p className="cursor-pointer">Shop</p>
+        <Link to="/search?query=" className="cursor-pointer">
+          Shop
+        </Link>
         <p className="cursor-pointer">Contact</p>
         <p className="cursor-pointer">Account</p>
         <p className="cursor-pointer">About us</p>

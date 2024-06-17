@@ -16,9 +16,9 @@ import TVsPage from "./pages/tvsPage/TvsPage";
 import MobileDevicesPage from "./pages/mobileDevicesPage/MobileDevicesPage";
 import TechGear from "./pages/techGear/TechGear";
 import CartPage from "./components/CartPage";
+import SearchPage from "./components/SearchPage";
 /*
 import SignInPage from "./pages/SignInPage";
-import CartPage from "./pages/CartPage";
 */
 import { CartProvider } from "./components/CartContext";
 import "./App.css";
@@ -61,6 +61,7 @@ function App() {
             <Route path="/mobiles" element={<MobileDevicesPage />} />
             <Route path="/tech-gear" element={<TechGear />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/search" element={<SearchPage />} />
             {/*
               <Route path="/sign-in" element={<SignInPage />} />
               */}
