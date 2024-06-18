@@ -109,7 +109,7 @@ function Navbar({ theme, setTheme }) {
         </nav>
         {/* Layout for smaller screens */}
         <nav className="flex flex-col lg:hidden justify-around items-center">
-          <div className="flex justify-around items-center w-full gap-6">
+          <div className="flex justify-around items-center w-full gap-3">
             <button className="cursor-pointer" onClick={toggleBars}>
               <FontAwesomeIcon icon={faBars} size="lg" />
             </button>
@@ -132,12 +132,12 @@ function Navbar({ theme, setTheme }) {
               </button>
               <button
                 onClick={() => setTheme(!theme)}
-                className="cursor-pointer"
+                className="cursor-pointer w-12"
               >
                 <img
                   src={theme ? dark : light}
                   alt="theme"
-                  className="w-16 h-8 bg-cover"
+                  className="w-12 h-8 bg-cover"
                 />
               </button>
             </div>
@@ -147,7 +147,7 @@ function Navbar({ theme, setTheme }) {
               <input
                 type="text"
                 placeholder="Search products"
-                className="rounded-lg border border-black w-80 sm:96 h-8 px-2 text-black"
+                className="rounded-lg border border-black w-72 h-8 px-2 text-black"
                 value={searchTerm || ""}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />

@@ -70,7 +70,7 @@ body.dark {
   opacity: 1;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .menu {
     width: 91%;
   }
@@ -103,7 +103,7 @@ body.dark {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .cartMenu {
     width: 91%;
   }
