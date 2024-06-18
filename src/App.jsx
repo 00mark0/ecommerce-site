@@ -14,9 +14,9 @@ import CartPage from "./components/CartPage";
 import SearchPage from "./components/SearchPage";
 import ScrollToTop from "./components/ScrollToTop";
 import NewsletterPage from "./pages/newsletterPage/NewsletterPage";
-/*
-import SignInPage from "./pages/SignInPage";
-*/
+import ContactPage from "./pages/contactPage/ContactPage";
+import LogInPage from "./pages/account/LogInPage";
+import RegisterPage from "./pages/account/components/RegisterPage";
 import { CartProvider } from "./components/CartContext";
 import "./App.css";
 
@@ -50,9 +50,9 @@ function App() {
             <Route path="/cart" element={<CartPage />} />
             <Route path="/search" element={<SearchPage />} />
             <Route path="/newsletter" element={<NewsletterPage />} />
-            {/*
-              <Route path="/sign-in" element={<SignInPage />} />
-              */}
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/login" element={<LogInPage />} />
+            <Route path="/register" element={<RegisterPage />} />
           </Routes>
         </div>
       </Router>

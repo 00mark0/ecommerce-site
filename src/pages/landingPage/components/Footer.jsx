@@ -54,8 +54,12 @@ function Footer() {
         <Link to="/search?query=" className="cursor-pointer">
           Shop
         </Link>
-        <p className="cursor-pointer">Contact</p>
-        <p className="cursor-pointer">Account</p>
+        <Link to="/contact">
+          <p className="cursor-pointer">Contact</p>
+        </Link>
+        <Link to="/login">
+          <p className="cursor-pointer">Account</p>
+        </Link>
         <p className="cursor-pointer">About us</p>
       </div>
     </footer>

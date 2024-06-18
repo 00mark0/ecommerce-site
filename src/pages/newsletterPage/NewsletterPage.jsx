@@ -42,7 +42,6 @@ function NewsletterPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Additional submit logic here
   };
 
   return (
@@ -51,7 +50,9 @@ function NewsletterPage() {
       className="mt-32 flex flex-col items-center justify-center px-4 mb-10"
     >
       <div className="mb-8 mt-8 text-center p-5 bg-gray-900 rounded-xl">
-        <h1 className="text-5xl font-bold text-yellow-500">ELECTRA</h1>
+        <h1 id="logo" className="text-5xl font-bold text-yellow-500">
+          ELECTRA
+        </h1>
         <p className="text-md text-gray-400">Subscribe to our newsletter</p>
       </div>
       <div className="w-full max-w-md bg-white rounded-lg shadow-md p-8">

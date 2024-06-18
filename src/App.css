@@ -16,6 +16,14 @@ body.dark {
   color: #fff;
 }
 
+#navbar {
+  z-index: 1000;
+}
+
+#sidebar {
+  z-index: 1000;
+}
+
 #logoText {
   font-family: "Audiowide", cursive;
 }
@@ -107,4 +115,12 @@ body.dark {
   .cartMenu {
     width: 91%;
   }
+}
+
+.leaflet-control-zoom {
+  display: none;
+}
+
+.leaflet-control-attribution {
+  display: none;
 }

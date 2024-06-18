@@ -59,7 +59,10 @@ function Navbar({ theme, setTheme }) {
 
   return (
     <>
-      <div className="p-8 bg-blue-950 text-white fixed top-0 left-0 w-full z-50">
+      <div
+        id="navbar"
+        className="p-8 bg-blue-950 text-white fixed top-0 left-0 w-full"
+      >
         {/* Layout for larger screens */}
         <nav className="hidden lg:flex justify-around items-center">
           <div className="flex items-center gap-4">
@@ -87,9 +90,11 @@ function Navbar({ theme, setTheme }) {
             </form>
           </div>
           <div className="flex items-center gap-4">
-            <button className="cursor-pointer">
-              <FontAwesomeIcon icon={faUser} size="lg" />
-            </button>
+            <Link to="/login">
+              <button className="cursor-pointer">
+                <FontAwesomeIcon icon={faUser} size="lg" />
+              </button>
+            </Link>
             <button className="cursor-pointer" onClick={toggleCart}>
               <FontAwesomeIcon icon={faShoppingCart} size="lg" />
               {cartItemCount > 0 && (
@@ -119,9 +124,11 @@ function Navbar({ theme, setTheme }) {
               </Link>
             </h1>
             <div className="flex items-center gap-2">
-              <button className="cursor-pointer">
-                <FontAwesomeIcon icon={faUser} size="lg" />
-              </button>
+              <Link to="/login">
+                <button className="cursor-pointer">
+                  <FontAwesomeIcon icon={faUser} size="lg" />
+                </button>
+              </Link>
               <button className="cursor-pointer flex" onClick={toggleCart}>
                 <FontAwesomeIcon icon={faShoppingCart} size="lg" />
                 {cartItemCount > 0 && (
@@ -164,7 +171,7 @@ function Navbar({ theme, setTheme }) {
           openBars ? "open" : ""
         } bg-white fixed top-0 left-0 min-h-screen transform transition-transform duration-300 ease-in-out ${
           openBars ? "translate-x-0" : "-translate-x-full"
-        } z-50`}
+        }`}
         ref={menuRef}
       >
         <button
@@ -198,32 +205,55 @@ function Navbar({ theme, setTheme }) {
                 }`}
               >
                 <Link to="/laptops" className="block">
-                  <li onClick={toggleBars} className="py-2 hover:bg-gray-200">
+                  <li
+                    onClick={toggleBars}
+                    className="py-2 hover:bg-gray-200 rounded-md"
+                  >
                     Laptops
                   </li>
                 </Link>
                 <Link to="/pcs" className="block">
-                  <li onClick={toggleBars} className="py-2 hover:bg-gray-200">
+                  <li
+                    onClick={toggleBars}
+                    className="py-2 hover:bg-gray-200 rounded-md"
+                  >
                     PCs
                   </li>
                 </Link>
                 <Link to="/tvs" className="block">
-                  <li onClick={toggleBars} className="py-2 hover:bg-gray-200">
+                  <li
+                    onClick={toggleBars}
+                    className="py-2 hover:bg-gray-200 rounded-md"
+                  >
                     TVs
                   </li>
                 </Link>
                 <Link to="/mobiles" className="block">
-                  <li onClick={toggleBars} className="py-2 hover:bg-gray-200">
+                  <li
+                    onClick={toggleBars}
+                    className="py-2 hover:bg-gray-200 rounded-md"
+                  >
                     Mobile Devices
                   </li>
                 </Link>
                 <Link to="/tech-gear" className="block">
-                  <li onClick={toggleBars} className="py-2 hover:bg-gray-200">
+                  <li
+                    onClick={toggleBars}
+                    className="py-2 hover:bg-gray-200 rounded-md"
+                  >
                     Tech Gear
                   </li>
                 </Link>
               </div>
             </div>
+            <Link to="/contact">
+              <li
+                onClick={toggleBars}
+                className="py-2 mt-32 hover:bg-gray-200 w-32 rounded-md"
+              >
+                Contact
+              </li>
+            </Link>
           </ul>
         )}
       </div>
