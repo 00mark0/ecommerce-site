@@ -1,5 +1,6 @@
 import newsletter from "../assets/newsletter.png";
 import "../styles/Newsletter.css";
+import { Link } from "react-router-dom";
 
 function Newsletter() {
   return (
@@ -14,9 +15,11 @@ function Newsletter() {
         Sign up for our newsletter, don&apos;t miss our biggest discounts and
         sales
       </p>
-      <button className="py-2 px-8 bg-yellow-400 rounded-full text-black font-semibold hover:bg-yellow-500">
-        Sign Up
-      </button>
+      <Link to="/newsletter">
+        <button className="py-2 px-8 bg-yellow-400 rounded-full text-black font-semibold hover:bg-yellow-500">
+          Sign Up
+        </button>
+      </Link>
     </div>
   );
 }

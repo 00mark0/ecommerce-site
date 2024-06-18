@@ -13,6 +13,7 @@ import TechGear from "./pages/techGear/TechGear";
 import CartPage from "./components/CartPage";
 import SearchPage from "./components/SearchPage";
 import ScrollToTop from "./components/ScrollToTop";
+import NewsletterPage from "./pages/newsletterPage/NewsletterPage";
 /*
 import SignInPage from "./pages/SignInPage";
 */
@@ -48,6 +49,7 @@ function App() {
             <Route path="/tech-gear" element={<TechGear />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/search" element={<SearchPage />} />
+            <Route path="/newsletter" element={<NewsletterPage />} />
             {/*
               <Route path="/sign-in" element={<SignInPage />} />
               */}
