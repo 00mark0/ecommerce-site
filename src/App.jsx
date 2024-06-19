@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import { CartProvider } from "./components/CartContext";
+import "./App.css";
 
+import Navbar from "./components/Navbar";
 import LandingPage from "./pages/landingPage/LandingPage";
 import ProductDetail from "./components/ProductDetail";
-
 import LaptopsPage from "./pages/laptopsPage/LaptopsPage";
 import PCPage from "./pages/pcPage/PcPage";
 import TVsPage from "./pages/tvsPage/TvsPage";
@@ -17,8 +18,6 @@ import NewsletterPage from "./pages/newsletterPage/NewsletterPage";
 import ContactPage from "./pages/contactPage/ContactPage";
 import LogInPage from "./pages/account/LogInPage";
 import RegisterPage from "./pages/account/components/RegisterPage";
-import { CartProvider } from "./components/CartContext";
-import "./App.css";
 
 function App() {
   const [theme, setTheme] = useState(

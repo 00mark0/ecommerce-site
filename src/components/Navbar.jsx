@@ -246,14 +246,6 @@ function Navbar({ theme, setTheme }) {
                 </Link>
               </div>
             </div>
-            <Link to="/contact">
-              <li
-                onClick={toggleBars}
-                className="py-2 mt-32 hover:bg-gray-200 w-32 rounded-md"
-              >
-                Contact
-              </li>
-            </Link>
           </ul>
         )}
       </div>

@@ -68,7 +68,7 @@ function CartPage() {
           <div id="cartOverview" className="flex flex-col justify-between">
             <h1 className="text-center lg:text-start mb-10">Order Overview</h1>
             <div className="border-2 border-gray-400 p-4 mb-10">
-              <Link>
+              <Link to="/register">
                 <p className="text-blue-500">Create a new account or log in</p>
               </Link>
               <p>to the existing one for easier shopping.</p>
