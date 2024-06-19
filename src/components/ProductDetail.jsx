@@ -12,7 +12,7 @@ function ProductDetail() {
   const { addItem } = useCart();
 
   useEffect(() => {
-    fetch("/public/products.json")
+    fetch("/products.json")
       .then((response) => response.json())
       .then((products) => {
         const currentProduct = products.find(
