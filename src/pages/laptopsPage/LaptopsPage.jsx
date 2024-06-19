@@ -85,48 +85,41 @@ function LaptopsPage() {
               <option value="tesla">Tesla</option>
             </select>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-16">
             {laptops.map((laptop) => (
               <div
-                className="rounded overflow-hidden shadow-lg m-4 flex flex-col items-center"
+                className="rounded-lg w-full overflow-hidden shadow-2xl min-h-80 flex flex-col items-center"
                 key={laptop.id}
+                style={{ minHeight: "300px" }}
               >
-                <Link
-                  to={`/product/${laptop.id}`}
-                  className="w-full flex flex-col items-center text-decoration-none"
-                >
+                <Link to={`/product/${laptop.id}`}>
                   <img
-                    className="w-full rounded-md object-cover"
+                    className="w-56 h-56 object-cover rounded-md"
                     src={laptop.image}
                     alt={laptop.name}
-                    style={{ minHeight: "250px" }}
                   />
-                  <div className="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                      <div className="font-bold text-xl mb-2">
-                        {laptop.name}
-                      </div>
-                      <p className="text-gray-700 text-base">
-                        {laptop.description}
-                      </p>
-                    </div>
-                    <div className="w-full pt-4 pb-2 flex justify-between items-center">
-                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-lg font-semibold text-gray-700">
-                        ${laptop.price}
-                      </span>
-                      <button
-                        className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
-                        type="button"
-                        onClick={() => addItem(laptop)}
-                      >
-                        <FontAwesomeIcon
-                          icon={faShoppingCart}
-                          className="text-black"
-                        />
-                      </button>
-                    </div>
-                  </div>
                 </Link>
+                <div className="p-4 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h2 className="font-bold text-lg mb-2">{laptop.name}</h2>
+                    <p className="text-gray-700 text-base mb-4">
+                      {laptop.description}
+                    </p>
+                  </div>
+                  <div className="w-full flex justify-between items-center">
+                    <p className="font-bold">${laptop.price}</p>
+                    <button
+                      className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
+                      type="button"
+                      onClick={() => addItem(laptop)}
+                    >
+                      <FontAwesomeIcon
+                        icon={faShoppingCart}
+                        className="text-black"
+                      />
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

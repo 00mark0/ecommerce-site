@@ -93,51 +93,41 @@ function MobileDevices() {
               <option value="zte">ZTE</option>
             </select>
           </div>
-          <div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4"
-            id="mobileDevicesGrid"
-          >
-            {phones.map((device) => (
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-16">
+            {phones.map((phone) => (
               <div
-                className="rounded overflow-hidden shadow-lg m-4 flex flex-col items-center"
-                key={device.id}
+                className="rounded-lg w-full overflow-hidden shadow-2xl min-h-80 flex flex-col items-center"
+                key={phone.id}
+                style={{ minHeight: "300px" }}
               >
-                <Link
-                  to={`/product/${device.id}`}
-                  className="w-full flex flex-col items-center text-decoration-none"
-                >
+                <Link to={`/product/${phone.id}`}>
                   <img
-                    className="w-full rounded-md object-cover"
-                    src={device.image}
-                    alt={device.name}
-                    style={{ minHeight: "250px" }}
+                    className="w-56 h-56 object-cover rounded-md"
+                    src={phone.image}
+                    alt={phone.name}
                   />
-                  <div className="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                      <div className="font-bold text-xl mb-2">
-                        {device.name}
-                      </div>
-                      <p className="text-gray-700 text-base">
-                        {device.description}
-                      </p>
-                    </div>
-                    <div className="w-full pt-4 pb-2 flex justify-between items-center">
-                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-lg font-semibold text-gray-700">
-                        ${device.price}
-                      </span>
-                      <button
-                        className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
-                        type="button"
-                        onClick={() => addItem(device)}
-                      >
-                        <FontAwesomeIcon
-                          icon={faShoppingCart}
-                          className="text-black"
-                        />
-                      </button>
-                    </div>
-                  </div>
                 </Link>
+                <div className="p-4 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h2 className="font-bold text-lg mb-2">{phone.name}</h2>
+                    <p className="text-gray-700 text-base mb-4">
+                      {phone.description}
+                    </p>
+                  </div>
+                  <div className="w-full flex justify-between items-center">
+                    <p className="font-bold">${phone.price}</p>
+                    <button
+                      className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
+                      type="button"
+                      onClick={() => addItem(phone)}
+                    >
+                      <FontAwesomeIcon
+                        icon={faShoppingCart}
+                        className="text-black"
+                      />
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

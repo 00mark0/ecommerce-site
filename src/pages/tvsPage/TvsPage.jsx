@@ -88,49 +88,41 @@ function TvsPage() {
               <option value="toshiba">Toshiba</option>
             </select>
           </div>
-          <div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4"
-            id="tvsGrid"
-          >
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 p-16">
             {tvs.map((tv) => (
               <div
-                className="rounded overflow-hidden shadow-lg m-4 flex flex-col items-center"
+                className="rounded-lg w-full overflow-hidden shadow-2xl min-h-80 flex flex-col items-center"
                 key={tv.id}
+                style={{ minHeight: "300px" }}
               >
-                <Link
-                  to={`/product/${tv.id}`}
-                  className="w-full flex flex-col items-center text-decoration-none"
-                >
+                <Link to={`/product/${tv.id}`}>
                   <img
-                    className="w-full rounded-md object-cover"
+                    className="w-56 h-56 object-cover rounded-md"
                     src={tv.image}
                     alt={tv.name}
-                    style={{ minHeight: "250px" }}
                   />
-                  <div className="p-4 flex-1 flex flex-col justify-between">
-                    <div>
-                      <div className="font-bold text-xl mb-2">{tv.name}</div>
-                      <p className="text-gray-700 text-base">
-                        {tv.description}
-                      </p>
-                    </div>
-                    <div className="w-full pt-4 pb-2 flex justify-between items-center">
-                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-lg font-semibold text-gray-700">
-                        ${tv.price}
-                      </span>
-                      <button
-                        className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
-                        type="button"
-                        onClick={() => addItem(tv)}
-                      >
-                        <FontAwesomeIcon
-                          icon={faShoppingCart}
-                          className="text-black"
-                        />
-                      </button>
-                    </div>
-                  </div>
                 </Link>
+                <div className="p-4 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h2 className="font-bold text-lg mb-2">{tv.name}</h2>
+                    <p className="text-gray-700 text-base mb-4">
+                      {tv.description}
+                    </p>
+                  </div>
+                  <div className="w-full flex justify-between items-center">
+                    <p className="font-bold">${tv.price}</p>
+                    <button
+                      className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
+                      type="button"
+                      onClick={() => addItem(tv)}
+                    >
+                      <FontAwesomeIcon
+                        icon={faShoppingCart}
+                        className="text-black"
+                      />
+                    </button>
+                  </div>
+                </div>
               </div>
             ))}
           </div>

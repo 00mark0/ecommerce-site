@@ -103,7 +103,7 @@ const SearchPage = () => {
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-56 h-56 object-cover"
+                      className="w-56 h-56 object-cover rounded-md"
                     />
                   </Link>
                   <div className="p-4 flex flex-col justify-between flex-grow">
