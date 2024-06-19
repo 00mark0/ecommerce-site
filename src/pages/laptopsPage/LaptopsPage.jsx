@@ -85,47 +85,48 @@ function LaptopsPage() {
               <option value="tesla">Tesla</option>
             </select>
           </div>
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-10 p-4"
-            id="laptopsGrid"
-          >
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {laptops.map((laptop) => (
               <div
-                className="max-w-xs rounded overflow-hidden shadow-2xl m-2 flex flex-col items-center min-h-full"
+                className="max-w-xs rounded overflow-hidden shadow-lg m-2 flex flex-col items-center min-h-full"
                 key={laptop.id}
               >
                 <Link
                   to={`/product/${laptop.id}`}
-                  style={{ textDecoration: "none" }}
+                  className="w-full h-full flex flex-col items-center text-decoration-none"
                 >
                   <img
-                    className="w-full rounded-md bg-cover"
+                    className="w-full rounded-md object-cover"
                     src={laptop.image}
                     alt={laptop.name}
-                    style={{ height: "300px" }}
+                    style={{ minHeight: "300px" }}
                   />
-                  <div className="px-6 py-4 min-h-48">
-                    <div className="font-bold text-xl mb-2">{laptop.name}</div>
-                    <p className="text-gray-700 text-base">
-                      {laptop.description}
-                    </p>
+                  <div className="px-6 py-4 flex-1 flex flex-col justify-between">
+                    <div>
+                      <div className="font-bold text-xl mb-2">
+                        {laptop.name}
+                      </div>
+                      <p className="text-gray-700 text-base">
+                        {laptop.description}
+                      </p>
+                    </div>
+                    <div className="w-full pt-4 pb-2 flex justify-between items-center">
+                      <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-lg font-semibold text-gray-700">
+                        ${laptop.price}
+                      </span>
+                      <button
+                        className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
+                        type="button"
+                        onClick={() => addItem(laptop)}
+                      >
+                        <FontAwesomeIcon
+                          icon={faShoppingCart}
+                          className="text-black"
+                        />
+                      </button>
+                    </div>
                   </div>
                 </Link>
-                <div className="w-full px-6 pt-4 pb-2 flex justify-between items-center">
-                  <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-lg font-semibold text-gray-700">
-                    ${laptop.price}
-                  </span>
-                  <button
-                    className="bg-yellow-500 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded-full"
-                    type="button"
-                    onClick={() => addItem(laptop)}
-                  >
-                    <FontAwesomeIcon
-                      icon={faShoppingCart}
-                      className="text-black"
-                    />
-                  </button>
-                </div>
               </div>
             ))}
           </div>
