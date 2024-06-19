@@ -33,7 +33,11 @@ function Footer() {
                 className="rounded-full p-4 text-blue-600"
               />
             </a>
-            <a href="#">
+            <a
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FontAwesomeIcon
                 icon={faYoutube}
                 size="xl"
